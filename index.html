@@ -3,155 +3,217 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Samuel Nicholson | Engineering Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <style>
+<title>Samuel Nicholson | Engineering Portfolio</title>
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #0b0f19;
-            color: white;
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .hero {
+html{
+    scroll-behavior:smooth;
+}
 
-            min-height: 100vh;
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0f19;
+    color:white;
+}
 
-            background:
-                linear-gradient(
-                    rgba(5,10,20,0.7),
-                    rgba(5,10,20,0.9)
-                ),
-                url("images/vtol-thumb.png");
+.hero{
 
-            background-size: cover;
-            background-position: center;
+    min-height:100vh;
 
-            padding: 40px 8%;
-        }
+    background:
+    linear-gradient(
+        rgba(5,10,20,0.75),
+        rgba(5,10,20,0.9)
+    ),
+    url("images/background.jpg");
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+    background-size:cover;
+    background-position:center;
 
-            margin-bottom: 100px;
-        }
+    padding:40px 8%;
+}
 
-        nav h2 {
-            font-size: 26px;
-        }
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-        }
+    margin-bottom:120px;
+}
 
-        nav a:hover {
-            opacity: 0.8;
-        }
+.logo{
+    font-size:22px;
+    font-weight:bold;
+}
 
-        .intro {
-            max-width: 750px;
-            margin-bottom: 70px;
-        }
+nav ul{
+    display:flex;
+    list-style:none;
+}
 
-        .intro h1 {
-            font-size: 60px;
-            margin-bottom: 20px;
-        }
+nav li{
+    margin-left:30px;
+}
 
-        .intro p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: #d8d8d8;
-        }
+nav a{
+    color:white;
+    text-decoration:none;
+    font-size:15px;
+}
 
-        .section-title {
-            margin-bottom: 25px;
-            font-size: 32px;
-        }
+nav a:hover{
+    opacity:0.8;
+}
 
-        .projects {
+.intro{
+    max-width:800px;
+    margin-bottom:80px;
+}
 
-            display: grid;
+.intro h1{
+    font-size:72px;
+    line-height:1.1;
+    margin-bottom:25px;
+}
 
-            grid-template-columns:
-                repeat(auto-fit,minmax(280px,1fr));
+.intro p{
+    font-size:24px;
+    line-height:1.6;
+    color:#d8d8d8;
+    max-width:700px;
+}
 
-            gap: 25px;
-        }
+.cta-button{
 
-        .project-card {
+    display:inline-block;
 
-            background: rgba(255,255,255,0.08);
+    margin-top:35px;
 
-            border-radius: 15px;
+    padding:15px 30px;
 
-            overflow: hidden;
+    background:white;
 
-            text-decoration: none;
+    color:black;
 
-            color: white;
+    text-decoration:none;
 
-            transition: 0.25s;
-        }
+    border-radius:10px;
 
-        .project-card:hover {
+    font-weight:bold;
 
-            transform: translateY(-8px);
+    transition:0.2s;
+}
 
-            background: rgba(255,255,255,0.14);
-        }
+.cta-button:hover{
+    transform:translateY(-3px);
+}
 
-        .project-card img {
+.section-title{
+    font-size:36px;
+    margin-bottom:25px;
+}
 
-            width: 100%;
+.projects{
 
-            height: 220px;
+    display:grid;
 
-            object-fit: cover;
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
 
-            display: block;
-        }
+    gap:25px;
+}
 
-        .project-content {
+.project-card{
 
-            padding: 20px;
-        }
+    background:rgba(255,255,255,0.08);
 
-        .project-content h3 {
+    border-radius:18px;
 
-            margin-bottom: 10px;
-        }
+    overflow:hidden;
 
-        .project-content p {
+    text-decoration:none;
 
-            color: #d0d0d0;
+    color:white;
 
-            line-height: 1.5;
-        }
+    transition:0.25s;
 
-        footer {
+    backdrop-filter:blur(10px);
+}
 
-            background: #070a12;
+.project-card:hover{
 
-            padding: 25px;
+    transform:translateY(-10px);
 
-            text-align: center;
+    background:rgba(255,255,255,0.14);
+}
 
-            color: #888;
-        }
+.project-card img{
 
-    </style>
+    width:100%;
+
+    height:230px;
+
+    object-fit:cover;
+
+    display:block;
+}
+
+.project-content{
+    padding:22px;
+}
+
+.project-content h3{
+
+    font-size:20px;
+
+    margin-bottom:10px;
+}
+
+.project-content p{
+
+    color:#d0d0d0;
+
+    line-height:1.6;
+}
+
+footer{
+
+    background:#070a12;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:#888;
+}
+
+@media(max-width:900px){
+
+    .intro h1{
+        font-size:48px;
+    }
+
+    .intro p{
+        font-size:18px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:20px;
+    }
+}
+
+</style>
 
 </head>
 
@@ -159,119 +221,117 @@
 
 <section class="hero">
 
-    <nav>
+<nav>
 
-        <h2>Samuel Nicholson</h2>
+<div class="logo">
+Samuel Nicholson
+</div>
 
-        <div>
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#projects">Projects</a></li>
+</ul>
 
-            <a href="#">Home</a>
-            <a href="#projects">Projects</a>
+</nav>
 
-        </div>
+<div class="intro">
 
-    </nav>
+<h1>
+Engineering systems that fly, move, and work.
+</h1>
 
-    <div class="intro">
+<p>
+Mechatronics Engineering student focused on UAV development,
+embedded systems, CAD, prototyping, and real-world engineering.
+</p>
 
-        <h1>
-            Engineering systems that fly, move, and work.
-        </h1>
+<a href="#projects" class="cta-button">
+View Projects
+</a>
 
-        <p>
-            Mechatronics Engineering student focused on UAV development,
-            embedded systems, CAD, prototyping, and real-world engineering.
-        </p>
+</div>
 
-    </div>
+<h2 class="section-title" id="projects">
+Featured Projects
+</h2>
 
-    <h2 class="section-title" id="projects">
+<div class="projects">
 
-        Featured Projects
+<a class="project-card" href="projects/vtol.html">
 
-    </h2>
+<img src="images/vtol-thumb.png" alt="VTOL UAV">
 
-    <div class="projects">
+<div class="project-content">
 
-        <a class="project-card"
-           href="projects/vtol.html">
+<h3>VTOL UAV</h3>
 
-            <img src="images/vtol-thumb.png">
+<p>
+3D printed tricopter-style VTOL aircraft designed,
+built and flight tested.
+</p>
 
-            <div class="project-content">
+</div>
 
-                <h3>VTOL UAV</h3>
+</a>
 
-                <p>
-                    3D printed tricopter-style VTOL aircraft
-                    designed, built and flight tested.
-                </p>
+<a class="project-card" href="projects/endurance.html">
 
-            </div>
+<img src="images/endurance-thumb.jpg" alt="Long Endurance UAV">
 
-        </a>
+<div class="project-content">
 
-        <a class="project-card"
-           href="projects/endurance.html">
+<h3>Long Endurance UAV</h3>
 
-            <img src="images/vtol-thumb.png">
+<p>
+Fixed-wing aircraft focused on efficient autonomous
+flight and payload capability.
+</p>
 
-            <div class="project-content">
+</div>
 
-                <h3>Long Endurance UAV</h3>
+</a>
 
-                <p>
-                    Fixed-wing aircraft focused on efficient
-                    autonomous flight and payload capability.
-                </p>
+<a class="project-card" href="projects/cnc.html">
 
-            </div>
+<img src="images/cnc-thumb.jpg" alt="CNC Card Dealer">
 
-        </a>
+<div class="project-content">
 
-        <a class="project-card"
-           href="projects/cnc.html">
+<h3>CNC Card Dealer</h3>
 
-            <img src="images/vtol-thumb.png">
+<p>
+Belt-driven mechatronics project combining CAD,
+embedded systems and manufacturing.
+</p>
 
-            <div class="project-content">
+</div>
 
-                <h3>CNC Card Dealer</h3>
+</a>
 
-                <p>
-                    Belt driven mechatronics project combining
-                    CAD, embedded systems and manufacturing.
-                </p>
+<a class="project-card" href="projects/robotics.html">
 
-            </div>
+<img src="images/robotics-thumb.jpg" alt="Robotics">
 
-        </a>
+<div class="project-content">
 
-        <a class="project-card"
-           href="projects/robotics.html">
+<h3>Robotics & Embedded Systems</h3>
 
-            <img src="images/vtol-thumb.png">
+<p>
+Sensor integration, motor control,
+microcontrollers and system design.
+</p>
 
-            <div class="project-content">
+</div>
 
-                <h3>Robotics & Embedded</h3>
+</a>
 
-                <p>
-                    Sensor integration, motor control,
-                    microcontrollers and system design.
-                </p>
-
-            </div>
-
-        </a>
-
-    </div>
+</div>
 
 </section>
 
 <footer>
 
-    © 2026 Samuel Nicholson
+© 2026 Samuel Nicholson | Engineering Portfolio
 
 </footer>
 
