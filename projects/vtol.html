@@ -1,29 +1,388 @@
+```html
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>VTOL UAV</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>VTOL UAV | Samuel Nicholson</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#0b0f19;
+    color:white;
+    font-family:Arial, sans-serif;
+    line-height:1.7;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.hero{
+
+    height:70vh;
+
+    background:
+    linear-gradient(
+        rgba(5,10,20,0.5),
+        rgba(5,10,20,0.8)
+    ),
+    url("../images/vtol-thumb.png");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:70px;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#d0d0d0;
+}
+
+.back-link{
+    display:inline-block;
+    margin-top:30px;
+    color:white;
+    text-decoration:none;
+}
+
+section{
+    padding:80px 0;
+}
+
+h2{
+    margin-bottom:20px;
+    font-size:36px;
+}
+
+.overview p{
+    max-width:900px;
+}
+
+.spec-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:20px;
+
+    margin-top:30px;
+}
+
+.spec-card{
+
+    background:#151b2d;
+
+    padding:20px;
+
+    border-radius:12px;
+}
+
+.spec-card h3{
+    color:#8ab4ff;
+    margin-bottom:10px;
+}
+
+.image-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:20px;
+}
+
+.image-grid img{
+
+    width:100%;
+    border-radius:12px;
+}
+
+.video-placeholder{
+
+    background:#151b2d;
+
+    border-radius:15px;
+
+    padding:60px;
+
+    text-align:center;
+}
+
+.timeline{
+
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.timeline-item{
+
+    background:#151b2d;
+
+    padding:25px;
+
+    border-radius:12px;
+}
+
+footer{
+
+    padding:40px;
+
+    text-align:center;
+
+    color:#888;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<a href="../index.html">Home</a>
+<div class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<a href="../index.html" class="back-link">
+← Back to Portfolio
+</a>
 
 <h1>VTOL UAV</h1>
 
 <p>
-This project is a 3D printed tricopter-style VTOL aircraft designed and built from scratch.
+A 3D printed tricopter-style VTOL aircraft designed,
+built and flight tested as part of an ongoing personal UAV development project.
 </p>
+
+</div>
+
+</div>
+
+</div>
+
+<section class="overview">
+
+<div class="container">
+
+<h2>Project Overview</h2>
 
 <p>
-Features:
+
+This project was developed to explore the design of efficient
+vertical takeoff and landing aircraft while maintaining the
+advantages of fixed-wing flight.
+
+The aircraft uses two front tilt motors and a rear fixed motor,
+allowing it to transition between hover and forward flight.
+
+The design combines aerodynamic analysis, CAD modelling,
+3D printing, electronics integration and flight testing into
+a complete aircraft development process.
+
 </p>
 
-<ul>
-    <li>INAV flight controller</li>
-    <li>Front motor tilt mechanism</li>
-    <li>3D printed airframe</li>
-    <li>Custom aerodynamic design</li>
-</ul>
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Specifications</h2>
+
+<div class="spec-grid">
+
+<div class="spec-card">
+<h3>Configuration</h3>
+<p>Tricopter VTOL</p>
+</div>
+
+<div class="spec-card">
+<h3>Construction</h3>
+<p>3D Printed Airframe</p>
+</div>
+
+<div class="spec-card">
+<h3>Flight Controller</h3>
+<p>INAV</p>
+</div>
+
+<div class="spec-card">
+<h3>Propulsion</h3>
+<p>Electric Brushless Motors</p>
+</div>
+
+<div class="spec-card">
+<h3>Power</h3>
+<p>5S LiPo</p>
+</div>
+
+<div class="spec-card">
+<h3>Purpose</h3>
+<p>Autonomous VTOL Development</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Gallery</h2>
+
+<div class="image-grid">
+
+<img src="../images/vtol-thumb.png">
+
+<img src="../images/vtol-thumb.png">
+
+<img src="../images/vtol-thumb.png">
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Flight Video</h2>
+
+<div class="video-placeholder">
+
+<h3>Flight Video Coming Soon</h3>
+
+<p>
+Embed YouTube flight footage here.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Development Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<h3>Initial Design</h3>
+
+<p>
+Concept development and aerodynamic layout selection.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Prototype Manufacturing</h3>
+
+<p>
+Airframe designed in CAD and manufactured using 3D printing.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Flight Testing</h3>
+
+<p>
+Initial flight testing performed to validate stability,
+control authority and airframe performance.
+</p>
+
+</div>
+
+<div class="timeline-item">
+
+<h3>Design Iteration</h3>
+
+<p>
+Aircraft updated based on flight test observations,
+including aerodynamic and structural refinements.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<h2>Lessons Learned</h2>
+
+<p>
+
+This project reinforced the importance of iterative design.
+Flight testing highlighted the difference between theoretical
+performance and real-world behaviour, leading to multiple
+refinements in aerodynamic design, structure, control systems,
+and integration.
+
+The development process involved continuous cycles of design,
+testing, analysis and improvement.
+
+</p>
+
+</div>
+
+</section>
+
+<footer>
+
+Samuel Nicholson • VTOL UAV Project
+
+</footer>
 
 </body>
+
 </html>
+```
