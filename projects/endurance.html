@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Long Endurance UAV | Samuel Nicholson</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:Arial,sans-serif;background:#0b0f19;color:white;line-height:1.7;}
+.container{width:88%;max-width:1150px;margin:auto;}
+
+nav{
+    position:absolute;
+    top:35px;
+    left:6%;
+    right:6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+
+nav a{color:white;text-decoration:none;margin-left:25px;}
+.logo{font-weight:bold;font-size:22px;}
+
+.hero{
+    min-height:85vh;
+    background:
+    linear-gradient(rgba(5,10,20,0.55),rgba(5,10,20,0.92)),
+    url("../images/endurance-thumb.jpg");
+    background-size:cover;
+    background-position:center 35%;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{max-width:800px;}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#d8d8d8;
+}
+
+section{padding:80px 0;}
+
+h2{
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+h3{
+    margin-top:28px;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+p{
+    color:#d0d0d0;
+    margin-bottom:18px;
+}
+
+.image{
+    width:100%;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+.image-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin:25px 0;
+}
+
+.image-grid img{
+    width:100%;
+    border-radius:16px;
+}
+
+.caption{
+    color:#9f9f9f;
+    font-size:14px;
+    margin-top:-12px;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#151b2d;
+    padding:28px;
+    border-radius:16px;
+    margin:28px 0;
+}
+
+.spec-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:18px;
+    margin-top:25px;
+}
+
+.spec{
+    background:#151b2d;
+    padding:20px;
+    border-radius:14px;
+}
+
+.spec strong{
+    display:block;
+    color:white;
+    margin-bottom:6px;
+}
+
+footer{
+    padding:35px;
+    background:#070a12;
+    text-align:center;
+    color:#888;
+}
+
+@media(max-width:800px){
+    .hero h1{font-size:44px;}
+    .hero p{font-size:18px;}
+    nav{flex-direction:column;gap:15px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Samuel Nicholson</div>
+    <div>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Long Endurance UAV</h1>
+            <p>
+                A fixed-wing UAV project focused on efficient aircraft design, lightweight
+                3D printed construction, aerodynamic performance, and payload-capable autonomous flight.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Project Overview</h2>
+
+<p>
+This project was developed as a fixed-wing UAV platform focused on efficiency, endurance, and practical
+autonomous flight capability. Unlike the VTOL aircraft, this design was based around conventional
+fixed-wing performance, with the goal of maximising aerodynamic efficiency and useful payload capacity.
+</p>
+
+<p>
+The aircraft was also used as a development step toward more complex UAV projects. Before committing
+to the additional complexity of VTOL transition flight, this platform allowed me to explore efficient
+3D printed aircraft design, structural layout, aerodynamic behaviour, and real flight testing in a
+simpler fixed-wing configuration.
+</p>
+
+<img src="../images/endurance-thumb.jpg" class="image" alt="Long endurance UAV">
+<p class="caption">Long endurance fixed-wing UAV platform.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Design Goals</h2>
+
+<p>
+The main aim of the aircraft was to create a practical fixed-wing UAV that could fly efficiently
+while still being simple enough to manufacture, repair, and iterate using 3D printing.
+</p>
+
+<div class="spec-grid">
+    <div class="spec">
+        <strong>Primary Goal</strong>
+        Efficient fixed-wing UAV development
+    </div>
+
+    <div class="spec">
+        <strong>Manufacturing</strong>
+        3D printed airframe components
+    </div>
+
+    <div class="spec">
+        <strong>Focus</strong>
+        Endurance, stability and payload capability
+    </div>
+
+    <div class="spec">
+        <strong>Development Role</strong>
+        Test platform for future autonomous UAV design
+    </div>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Airframe & CAD Design</h2>
+
+<p>
+The airframe was designed around efficient fixed-wing flight rather than vertical lift. This allowed
+more design focus to be placed on wing geometry, fuselage packaging, structural efficiency, and low-drag
+layout.
+</p>
+
+<p>
+A key part of the design process was learning how to create a 3D printed aircraft that could remain
+lightweight while still being strong enough for real flight loads. This involved considering print
+orientation, wall thickness, internal structure, spar placement, and how loads would pass through
+the wing and fuselage.
+</p>
+
+<p>
+This project became an important stepping stone for later UAV work because it helped validate the
+manufacturing approach before applying similar methods to more complex VTOL aircraft.
+</p>
+
+<!-- Optional future images:
+<img src="../images/endurance-cad.jpg" class="image" alt="Long endurance UAV CAD model">
+<p class="caption">CAD model of the long endurance UAV.</p>
+-->
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Aerodynamic Development</h2>
+
+<p>
+The aerodynamic design was focused on producing stable and efficient forward flight. The aircraft
+needed enough wing area for manageable takeoff and landing speeds while still maintaining a clean
+layout for efficient cruise.
+</p>
+
+<p>
+Important considerations included wing loading, tail sizing, centre of gravity location, stall
+behaviour, and overall stability. These decisions directly affect how easy the aircraft is to launch,
+control, and recover during testing.
+</p>
+
+<p>
+One of the major lessons from earlier fixed-wing testing was the importance of low-speed stall
+behaviour. After experiencing a tip stall issue on an earlier aircraft, I placed more emphasis on
+predictable stall characteristics and control authority at low speed.
+</p>
+
+<!-- Optional future image:
+<img src="../images/endurance-cfd.jpg" class="image" alt="Long endurance UAV aerodynamic analysis">
+<p class="caption">Aerodynamic analysis used to support design decisions.</p>
+-->
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Structural Design & 3D Printing</h2>
+
+<p>
+Because the aircraft was 3D printed, structural design had to be considered from the beginning.
+The challenge was not simply making parts strong, but making them strong enough while keeping the
+overall aircraft mass low.
+</p>
+
+<p>
+In aircraft design, excess mass quickly affects takeoff performance, stall speed, endurance and
+payload capability. For this reason, increasing infill or wall thickness everywhere was not an ideal
+solution.
+</p>
+
+<p>
+Instead, the design process focused on placing material where it contributed most to stiffness and
+strength. This meant thinking carefully about internal structure, print direction, spar integration
+and the load paths between the wing, fuselage and tail.
+</p>
+
+<div class="card">
+<h3>Key Challenge: Strength Without Excess Weight</h3>
+<p>
+The most important structural challenge was achieving enough stiffness for reliable flight while
+keeping the aircraft light. The project helped develop an understanding of how 3D printed parts behave
+under real flight loads and how to design printed components around those limitations.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Flight Testing & Iteration</h2>
+
+<p>
+Flight testing was used to validate the assumptions made during CAD design and construction. This
+stage was essential because real aircraft behaviour often reveals issues that are difficult to fully
+predict during the design phase.
+</p>
+
+<p>
+Testing provided feedback on stability, control response, structural stiffness, launch behaviour,
+and general handling. That feedback was then used to guide future design changes and improve later
+aircraft.
+</p>
+
+<div class="card">
+<h3>What This Aircraft Taught Me</h3>
+<p>
+This project helped me understand the full development loop of a UAV: design, manufacture, test,
+analyse and improve. It also highlighted how important it is to design with repairability and iteration
+in mind, especially when developing experimental aircraft.
+</p>
+</div>
+
+<!-- Optional future image:
+<img src="../images/endurance-flight.jpg" class="image" alt="Long endurance UAV flight testing">
+<p class="caption">Flight testing used to evaluate stability and handling.</p>
+-->
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Connection to the VTOL Project</h2>
+
+<p>
+This aircraft played an important role in the wider development of my UAV work. Before attempting a
+full VTOL aircraft, I wanted to better understand how to design, manufacture and fly a 3D printed
+fixed-wing UAV successfully.
+</p>
+
+<p>
+The lessons from this fixed-wing platform directly influenced the later VTOL design, especially in
+areas such as wing structure, print orientation, aerodynamic layout, centre of gravity placement and
+flight testing strategy.
+</p>
+
+<p>
+In that sense, this project was not only a standalone UAV, but also a testbed that helped reduce risk
+before moving on to a more complex transition-capable aircraft.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Key Lessons</h2>
+
+<p>
+The main lesson from this project was that efficient aircraft design depends on the interaction between
+aerodynamics, structure, weight and manufacturability. A design that looks good in CAD still needs to
+be practical to build, strong enough to fly, and stable enough to test safely.
+</p>
+
+<p>
+The project also reinforced the value of incremental development. By first building and testing a
+more conventional fixed-wing UAV, I was able to develop skills and design confidence that became useful
+when working on the more complex VTOL platform.
+</p>
+
+</div>
+</section>
+
+<footer>
+Samuel Nicholson • Long Endurance UAV Project
+</footer>
+
+</body>
+</html>
