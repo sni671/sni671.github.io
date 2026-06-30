@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HIT Lab Project | Samuel Nicholson</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#0b0f19;
+    color:white;
+    line-height:1.7;
+}
+
+.container{
+    width:88%;
+    max-width:1150px;
+    margin:auto;
+}
+
+nav{
+    position:absolute;
+    top:35px;
+    left:6%;
+    right:6%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+}
+
+.logo{
+    font-weight:bold;
+    font-size:22px;
+}
+
+.hero{
+    min-height:85vh;
+    background:
+    linear-gradient(rgba(5,10,20,0.55), rgba(5,10,20,0.92)),
+    url("../images/hit-hero.jpg");
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+}
+
+.hero-content{
+    max-width:800px;
+}
+
+.hero h1{
+    font-size:68px;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:22px;
+    color:#d8d8d8;
+}
+
+section{
+    padding:80px 0;
+}
+
+h2{
+    font-size:38px;
+    margin-bottom:25px;
+}
+
+h3{
+    margin-top:28px;
+    margin-bottom:10px;
+    font-size:24px;
+}
+
+p{
+    color:#d0d0d0;
+    margin-bottom:18px;
+}
+
+.image{
+    width:100%;
+    border-radius:16px;
+    margin:25px 0;
+}
+
+.image-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    margin:25px 0;
+}
+
+.image-grid img{
+    width:100%;
+    border-radius:16px;
+}
+
+.caption{
+    color:#9f9f9f;
+    font-size:14px;
+    margin-top:-12px;
+    margin-bottom:28px;
+}
+
+.card{
+    background:#151b2d;
+    padding:28px;
+    border-radius:16px;
+    margin:28px 0;
+}
+
+footer{
+    padding:35px;
+    background:#070a12;
+    text-align:center;
+    color:#888;
+}
+
+@media(max-width:800px){
+    .hero h1{
+        font-size:44px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Samuel Nicholson</div>
+    <div>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>HIT Lab Mixed Reality Project</h1>
+            <p>
+                A research internship project involving mechanical design,
+                3D printed prototyping, Unity development, and mixed reality tracking.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Project Overview</h2>
+
+<p>
+During my time at the Human Interface Technology Lab, I worked on the design and development
+of a physical latching button mechanism intended for mixed reality interaction.
+</p>
+
+<p>
+The project combined mechanical prototyping with Unity development. My work involved researching
+existing latching mechanisms, designing and 3D printing my own mechanism, learning Unity basics,
+and beginning to track the physical design inside a mixed reality environment.
+</p>
+
+<p>
+The project gave me experience working in a research environment where the goal was not only to
+build a final object, but to explore how physical mechanisms could be connected with digital
+interaction.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Why I Chose HIT Lab</h2>
+
+<p>
+I was interested in HIT Lab because it offered the chance to work around innovative technologies
+such as mixed reality, while also developing hands-on prototyping and testing skills.
+</p>
+
+<p>
+The project also gave me an opportunity to improve my coding ability, gain exposure to postgraduate
+research, and work in a collaborative lab environment.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Research Phase</h2>
+
+<p>
+The first stage of the project involved researching existing latching and push-push button mechanisms.
+I looked at how different mechanisms achieved state changes, how they could be manufactured, and
+which designs were realistic to prototype using 3D printing.
+</p>
+
+<p>
+This stage helped me understand the constraints of the problem before starting my own design.
+I used Miro to organise ideas, compare mechanisms, and decide which design direction was most practical.
+</p>
+
+<img src="../images/hit-research.jpg" class="image" alt="Research and existing mechanism examples">
+<p class="caption">Research phase showing existing mechanisms, printed examples, and early design thinking.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Mechanical Design Development</h2>
+
+<p>
+The initial mechanism was designed in Onshape. This allowed me to quickly create and test the basic
+geometry of the button and understand how the moving parts would interact.
+</p>
+
+<p>
+After the first design stage, I moved the model into Autodesk Fusion to develop it more robustly
+using a parametric design workflow. This made it easier to adjust dimensions, tolerances, clearances,
+and spring positions as the design evolved.
+</p>
+
+<div class="image-grid">
+    <img src="../images/hit-design-1.jpg" alt="Initial HIT Lab mechanism design">
+    <img src="../images/hit-design-2.jpg" alt="Improved HIT Lab mechanism design">
+</div>
+
+<p>
+One of the key improvements was changing the mechanism into a more cylindrical shape. This made it
+more ergonomic to hold and reduced the effect of gravity and orientation on the mechanism.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Springs & Mechanical Behaviour</h2>
+
+<p>
+The spring system was an important part of the mechanism because it controlled how the button moved,
+returned, and latched between states.
+</p>
+
+<p>
+This required testing the interaction between printed geometry, spring force, friction, and clearances.
+Small changes in tolerance had a noticeable effect on whether the mechanism moved smoothly or bound up.
+</p>
+
+<img src="../images/hit-springs.jpg" class="image" alt="Spring mechanism development">
+<p class="caption">Spring and mechanism development used to refine the button feel and latching behaviour.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Prototype Iteration</h2>
+
+<p>
+The design was developed using an iterative prototyping process. Each printed version revealed
+something new about the mechanism, such as where tolerances were too tight, where parts needed
+more support, or where the user interaction could be improved.
+</p>
+
+<div class="card">
+<h3>Challenge: Designing for 3D Printing</h3>
+<p>
+A major challenge was designing a mechanism that worked reliably when manufactured on a 3D printer.
+Clearances that appeared suitable in CAD did not always behave the same once printed, especially
+where friction, layer lines and small surface imperfections affected the movement.
+</p>
+</div>
+
+<div class="card">
+<h3>Challenge: Mechanism Feel</h3>
+<p>
+The mechanism needed to be functional, but also comfortable and intuitive to use. This meant the
+shape, travel, spring force and latching behaviour all had to be considered together rather than
+treated as separate problems.
+</p>
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Unity Development</h2>
+
+<p>
+A major part of the project was learning Unity and using it to connect the physical mechanism with
+a digital mixed reality environment.
+</p>
+
+<p>
+This involved learning the Unity hierarchy, writing scripts in C#, using prefabs, importing and
+working with the Meta SDK, setting up player movement and camera behaviour, and experimenting with
+animations.
+</p>
+
+<img src="../images/hit-unity.jpg" class="image" alt="Unity development">
+<p class="caption">Unity development work used to begin connecting the physical mechanism to a mixed reality environment.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Mixed Reality Tracking</h2>
+
+<p>
+Once the mechanism had been designed and printed, the next stage was tracking it inside Unity.
+The goal was to create a connection between a physical object and its digital representation.
+</p>
+
+<p>
+This introduced a different set of challenges compared with mechanical design. Instead of only
+thinking about geometry and movement, I also had to consider how the object would be recognised,
+tracked, and represented in a mixed reality environment.
+</p>
+
+<img src="../images/hit-tracking.jpg" class="image" alt="Mixed reality tracking">
+<p class="caption">Tracking work used to detect and represent the physical mechanism in Unity.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Results</h2>
+
+<p>
+By the end of the project, I had researched existing latching mechanisms, designed and printed my
+own mechanism, developed a more ergonomic cylindrical design, learned core Unity workflows, and
+begun integrating the physical prototype with mixed reality tracking.
+</p>
+
+<img src="../images/hit-results.jpg" class="image" alt="Final HIT Lab prototype results">
+<p class="caption">Final prototype and results from the HIT Lab project.</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Future Development</h2>
+
+<p>
+The next steps for the project would be to improve the tracking method, fix remaining Unity-side
+bugs, and add code that allows Unity to detect the physical state of the mechanism.
+</p>
+
+<p>
+Further mechanical development could also involve experimenting with different push-push mechanism
+designs and making the tracking system more subtle so that the object feels more natural to use.
+</p>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2>Key Lessons</h2>
+
+<p>
+This project helped me develop a broader understanding of mechatronics beyond traditional robotics
+or UAV work. It required mechanical design, 3D printing, user interaction thinking, software development,
+and mixed reality integration.
+</p>
+
+<p>
+The biggest lesson was that physical-digital interaction requires both good mechanical design and
+good software integration. A mechanism can work physically, but still need careful consideration
+before it works well as part of an interactive mixed reality system.
+</p>
+
+</div>
+</section>
+
+<footer>
+Samuel Nicholson • HIT Lab Mixed Reality Project
+</footer>
+
+</body>
+</html>
