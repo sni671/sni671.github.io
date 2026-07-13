@@ -1,608 +1,172 @@
-<!DOCTYPE html>
-<html lang="en">
+<section>
 
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
 
-<title>VTOL UAV | Samuel Nicholson</title>
+<h2>Structural Design & Additive Manufacturing</h2>
 
-<style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+<p>
+One of the largest engineering challenges throughout this project was developing an airframe that was
+sufficiently strong for flight while remaining lightweight enough to achieve practical flight
+performance.
+</p>
 
-html{
-    scroll-behavior:smooth;
-}
+<p>
+Although additive manufacturing offers enormous design freedom, FDM printing is often overlooked for
+aircraft because standard thermoplastics generally provide a lower stiffness-to-weight ratio than
+traditional composite construction. Many modern printed aircraft overcome this limitation through
+lightweight foaming filaments or composite structures such as carbon fibre or fibreglass. At the
+time of this project, however, I did not have access to these materials or the resources required
+for composite manufacturing.
+</p>
 
-body{
-    font-family:Arial, sans-serif;
-    background:#0b0f19;
-    color:white;
-    line-height:1.7;
-}
+<p>
+Instead, I challenged myself to achieve the highest possible structural efficiency using conventional
+PLA through careful engineering design.
+</p>
 
-.container{
-    width:88%;
-    max-width:1150px;
-    margin:auto;
-}
+<p>
+Unlike conventional engineering structures, <strong>FDM printed parts are inherently anisotropic</strong>,
+meaning their mechanical properties depend heavily on print orientation. This made print orientation
+a design parameter that was considered alongside the geometry of every structural component. Layer
+direction, expected loading, printability and manufacturing constraints all influenced the final
+design.
+</p>
 
-nav{
-    position:absolute;
-    top:35px;
-    left:6%;
-    right:6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:10;
-}
+<p>
+Rather than relying on automatically generated slicer infill, every major structural component of the
+aircraft was designed with <strong>custom internal reinforcement</strong>. This provided complete
+control over where material was placed, allowing high-stress regions to be reinforced while reducing
+unnecessary mass elsewhere.
+</p>
 
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:25px;
-}
+<p>
+The objective was to produce printed parts that behaved as engineered structural components rather
+than simply solid plastic parts.
+</p>
 
-.logo{
-    font-weight:bold;
-    font-size:22px;
-}
+</div>
 
-.hero{
-    min-height:85vh;
-    background:
-    linear-gradient(rgba(5,10,20,0.55), rgba(5,10,20,0.92)),
-    url("../images/vtol-thumb.png");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-}
-
-.hero-content{
-    max-width:800px;
-}
-
-.hero h1{
-    font-size:74px;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:22px;
-    color:#d8d8d8;
-}
-
-.button{
-    display:inline-block;
-    margin-top:30px;
-    padding:14px 26px;
-    background:white;
-    color:black;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
-}
-
-section{
-    padding:80px 0;
-}
-
-h2{
-    font-size:38px;
-    margin-bottom:25px;
-}
-
-h3{
-    margin-top:28px;
-    margin-bottom:10px;
-    font-size:24px;
-}
-
-p{
-    color:#d0d0d0;
-    margin-bottom:18px;
-}
-
-.image{
-    width:100%;
-    border-radius:16px;
-    margin:25px 0;
-}
-
-.image-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-    margin:25px 0;
-}
-
-.image-grid img{
-    width:100%;
-    border-radius:16px;
-}
-
-.caption{
-    color:#9f9f9f;
-    font-size:14px;
-    margin-top:-12px;
-    margin-bottom:28px;
-}
-
-.spec-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:18px;
-    margin-top:25px;
-}
-
-.spec{
-    background:#151b2d;
-    padding:20px;
-    border-radius:14px;
-}
-
-.spec strong{
-    display:block;
-    color:white;
-    margin-bottom:6px;
-}
-
-.challenge{
-    background:#151b2d;
-    padding:28px;
-    border-radius:16px;
-    margin:28px 0;
-}
-
-.video-wrap{
-    width:100%;
-    max-width:430px;
-    aspect-ratio:9/16;
-    margin-top:25px;
-}
-
-.video-wrap iframe{
-    width:100%;
-    height:100%;
-    border-radius:16px;
-}
-
-footer{
-    padding:35px;
-    background:#070a12;
-    text-align:center;
-    color:#888;
-}
-
-@media(max-width:800px){
-    .hero h1{
-        font-size:46px;
-    }
-
-    .hero p{
-        font-size:18px;
-    }
-
-    nav{
-        flex-direction:column;
-        gap:15px;
-    }
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-    <div class="logo">Samuel Nicholson</div>
-    <div>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#projects">Projects</a>
-    </div>
-</nav>
-
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>VTOL UAV</h1>
-            <p>
-                A 3D printed tricopter-style VTOL UAV developed to explore vertical takeoff,
-                transition flight, and efficient fixed-wing operation through real-world testing
-                and iterative engineering design.
-            </p>
-            <a href="#video" class="button">Watch Flight Test</a>
-        </div>
-    </div>
 </section>
+
+
 
 <section>
+
 <div class="container">
 
-<h2>Project Overview</h2>
+<h2>Fuselage Structure</h2>
 
 <p>
-This project began as an attempt to combine two very different aircraft behaviours: the ability
-to take off and land vertically, and the efficiency of fixed-wing forward flight. The result is a
-tricopter-style VTOL aircraft with two front tilt motors and a rear propulsion motor.
+The fuselage was designed around a continuous <strong>helical rib structure</strong> running the
+length of the aircraft.
 </p>
 
 <p>
-The aircraft was designed, manufactured, wired, configured and tested as a complete system.
-The project involved CAD design, CFD analysis, structural design, 3D printing, electronics
-integration, flight controller configuration, vertical flight testing and forward flight development.
+Rather than filling the fuselage with conventional slicer infill, these ribs were designed
+specifically around the expected loading conditions during flight. The helical arrangement
+significantly improves both bending stiffness and torsional rigidity while using considerably less
+material than a solid structure.
 </p>
 
 <p>
-A major part of the project was not just building the final aircraft, but working through the
-failures and design changes required to make the platform more reliable. Several early design
-choices had to be revised after real flight testing exposed issues that were not obvious in CAD
-or simulation.
+The internal geometry also improves load transfer between the wing attachment, battery compartment
+and tail boom while maintaining sufficient space for electronics, wiring and maintenance access.
+</p>
+
+<img src="../images/vtol-body-structure.jpg" class="image">
+
+<p class="caption">
+Custom-designed helical reinforcement ribs used throughout the fuselage to maximise stiffness while
+minimising weight.
+</p>
+
+<p>
+Because the fuselage was designed as a modular assembly, the connection between the front and rear
+sections naturally became one of the highest loaded regions of the aircraft.
+</p>
+
+<p>
+To prevent this joint becoming a structural weak point, <strong>1.2&nbsp;mm steel locating pins</strong>
+were incorporated into the design. These pins transfer bending loads across the joint while
+maintaining accurate alignment between the fuselage sections, significantly improving both strength
+and durability.
 </p>
 
 </div>
+
 </section>
 
-<section id="video">
-<div class="container">
 
-<h2>Flight Test Video</h2>
-
-<p>
-This video shows early vertical flight testing of the VTOL platform.
-</p>
-
-<div class="video-wrap">
-<iframe
-src="https://www.youtube.com/embed/0KH5kGHW6ac"
-title="VTOL UAV Flight Test"
-frameborder="0"
-allowfullscreen>
-</iframe>
-</div>
-
-</div>
-</section>
 
 <section>
+
 <div class="container">
 
-<h2>CAD Design</h2>
+<h2>Wing Structure</h2>
 
 <p>
-The aircraft was designed in CAD before manufacturing. This allowed the major components to be
-packaged together before committing to physical parts. The CAD model was used to position the
-motors, wing spar, tail boom, battery, electronics bay, control surfaces and fuselage structure.
+The wings presented a different engineering challenge.
 </p>
 
 <p>
-The main structural layout uses a 10 × 8 × 500 mm carbon fibre wing spar and a 16 × 14 × 500 mm
-carbon fibre tail boom. These carbon fibre members provide stiffness while allowing the 3D printed
-parts to be used mainly for geometry, mounting, packaging and load transfer.
+Due to the size limitations of the printer, each wing had to be manufactured as
+<strong>four individual printed sections</strong>, excluding the aileron.
 </p>
 
-<img src="../images/vtol-CAD.jpg" class="image" alt="VTOL CAD model">
-<p class="caption">CAD model used to develop the aircraft layout, structure and component packaging.</p>
+<p>
+Following research into lightweight aircraft structures and internal wing reinforcement methods,
+the internal geometry was designed around a series of <strong>diagonal reinforcing ribs</strong>.
+This arrangement provides excellent stiffness while efficiently distributing aerodynamic loads
+throughout the wing.
+</p>
 
 <p>
-One of the key CAD challenges was designing the aircraft so that it could actually be built and
-modified easily. The aircraft needed to be strong enough for flight, but also modular enough that
-individual parts could be reprinted and replaced during development.
+Like the fuselage, the wing joints also use
+<strong>1.2&nbsp;mm steel locating pins</strong> to improve alignment while transferring structural
+loads between adjacent printed sections.
+</p>
+
+<img src="../images/vtol-wing-structure.jpg" class="image">
+
+<p class="caption">
+Internal wing reinforcement showing the diagonal rib arrangement and steel locating pins connecting
+the modular wing sections.
 </p>
 
 </div>
+
 </section>
+
+
 
 <section>
+
 <div class="container">
 
-<h2>Structural Design & 3D Printing</h2>
+<h2>Design Iteration</h2>
 
 <p>
-A major challenge in this project was designing printed parts that were both strong and lightweight.
-Simply increasing wall thickness or using high infill would make the parts stronger, but it would
-also increase mass quickly and reduce flight performance.
+One of the most valuable aspects of this project has been the iterative design process.
 </p>
 
 <p>
-To solve this, many of the aircraft components were designed with custom internal structures rather
-than relying only on default slicer infill. This allowed material to be placed where it was useful
-for load paths, while keeping low-stress regions lighter.
+Every redesign improved something—whether that was weight, stiffness, manufacturability, assembly,
+print time or reliability. Rather than viewing failed components as wasted effort, each one
+represented a better understanding of how the aircraft behaved and how the design could be improved.
 </p>
 
 <p>
-This approach was particularly important for the fuselage, motor mounting regions and wing support
-structure. The goal was to make the printed parts behave more like engineered aircraft components
-rather than solid plastic blocks.
+This iterative approach ultimately led to a significantly stronger, lighter and more maintainable
+airframe than would have been possible by attempting to perfect the design before manufacturing.
 </p>
 
-<img src="../images/plane-print-pile.png" class="image" alt="Pile of prototype 3D printed aircraft parts">
-<p class="caption">Discarded and unused printed parts from the development process. Each part represents a design test, prototype, or lesson learned.</p>
+<img src="../images/plane-print-pile.png" class="image">
+
+<p class="caption">
+A collection of discarded prototype parts produced throughout development. Each component represents
+a design iteration, structural experiment or manufacturing improvement.
+</p>
 
 </div>
+
 </section>
-
-<section>
-<div class="container">
-
-<h2>Aerodynamics & CFD</h2>
-
-<p>
-CFD was used as a design aid to understand the general aerodynamic behaviour of the aircraft. The
-goal was not to perfectly predict the full flight envelope, but to identify trends in the flow field
-and support design decisions around the wing and fuselage geometry.
-</p>
-
-<p>
-The analysis helped visualise pressure regions and flow behaviour across the aircraft. This was
-especially useful when considering stability, wing loading and low-speed behaviour.
-</p>
-
-<img src="../images/vtol-CFD1.jpg" class="image" alt="VTOL CFD analysis">
-<p class="caption">CFD pressure visualisation used to support aerodynamic development.</p>
-
-<p>
-One of the most important aerodynamic lessons came from flight testing rather than simulation.
-An early version of the aircraft experienced a low-speed tip stall, causing the aircraft to roll
-off and crash. After reviewing the behaviour, I modified the wing design to include washout, reducing
-the angle of attack at the wing tips relative to the root.
-</p>
-
-<p>
-This change was intended to make the root stall before the tips, improving low-speed handling and
-making the stall behaviour more predictable.
-</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Electronics Architecture</h2>
-
-<p>
-The electronics system was built around a Corewing F405 flight controller running INAV. The aircraft
-uses a combination of propulsion, servo actuation, navigation sensors and video transmission to support
-manual testing and future autonomous operation.
-</p>
-
-<div class="spec-grid">
-
-<div class="spec">
-<strong>Flight Controller</strong>
-Corewing F405 running INAV
-</div>
-
-<div class="spec">
-<strong>Motors</strong>
-Flashhobby Shrike 1807 1300KV
-</div>
-
-<div class="spec">
-<strong>ESCs</strong>
-Readytosky 45A BLHeli_S 2–6S ESCs
-</div>
-
-<div class="spec">
-<strong>Control Surface Servos</strong>
-SG90 servos
-</div>
-
-<div class="spec">
-<strong>Tilt Servos</strong>
-S0900M 9 kg metal gear servos
-</div>
-
-<div class="spec">
-<strong>Navigation</strong>
-Foxeer 250 GPS
-</div>
-
-<div class="spec">
-<strong>Airspeed</strong>
-Matek digital pitot tube
-</div>
-
-<div class="spec">
-<strong>Radio Link</strong>
-ELRS receiver
-</div>
-
-<div class="spec">
-<strong>Video</strong>
-1000 mW analog VTX
-</div>
-
-</div>
-
-<p>
-I have kept the electronics section at a system level rather than listing every wire and connector.
-The important engineering challenge was integrating the flight controller, propulsion system, servos,
-navigation sensors and video system into a compact aircraft while maintaining access for debugging
-and iteration.
-</p>
-
-<!-- OPTIONAL IMAGE WHEN YOU HAVE IT:
-<img src="../images/vtol-wiring.jpg" class="image" alt="VTOL wiring and electronics layout">
-<p class="caption">Electronics layout and wiring integration.</p>
--->
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Development Challenges & Iterations</h2>
-
-<p>
-The most important part of this project was the iteration process. Several problems only appeared
-during physical testing, and each one required analysis, redesign and retesting.
-</p>
-
-<div class="challenge">
-<h3>Challenge 1: Low-Speed Tip Stall</h3>
-
-<p>
-An early version of the aircraft crashed after entering a low-speed tip stall. The aircraft lost
-roll stability when the wing tips stalled before the root, causing a rapid roll-off.
-</p>
-
-<p>
-To address this, I redesigned the wing to include washout. By reducing the effective angle of attack
-towards the wing tips, the aircraft should maintain better aileron effectiveness and produce a more
-controlled stall progression.
-</p>
-
-<p>
-This was one of the clearest examples of flight testing directly changing the design.
-</p>
-</div>
-
-<div class="challenge">
-<h3>Challenge 2: Motor Mount Deformation</h3>
-
-<p>
-During vertical flight testing, the original PLA motor mounting plates began to deform slightly.
-The issue was caused by heat from the motors softening the surrounding plastic during sustained
-hover testing.
-</p>
-
-<p>
-As the material softened, the mounting screws began to pull through the plates. Although the parts
-were strong enough under static loading, the combination of heat, vibration and motor loads exposed
-a weakness in the design.
-</p>
-
-<p>
-The motor mounting system was then redesigned to better distribute load and improve resistance to
-thermal deformation.
-</p>
-
-<!-- OPTIONAL IMAGE WHEN YOU HAVE IT:
-<img src="../images/vtol-motor-mount.jpg" class="image" alt="VTOL motor mount redesign">
--->
-</div>
-
-<div class="challenge">
-<h3>Challenge 3: Strength vs Weight</h3>
-
-<p>
-A recurring challenge throughout the project was balancing strength and weight. In small aircraft,
-extra mass quickly affects thrust margin, stall speed and endurance. However, parts still need to
-survive vibration, landing loads and flight stresses.
-</p>
-
-<p>
-Instead of relying only on default slicer infill, I designed custom internal structures into many
-parts. This gave better control over the load paths and allowed high-stress areas to be reinforced
-without making the entire component unnecessarily heavy.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Vertical Flight</h2>
-
-<p>
-Vertical flight testing focused on validating the propulsion system, thrust margin, control response
-and structural stiffness. Hover is demanding because the aircraft is fully dependent on active control
-rather than aerodynamic stability from the wing.
-</p>
-
-<p>
-This stage also revealed practical integration issues, including vibration, motor heating, servo loading
-and the importance of reliable mechanical mounting.
-</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Transition Flight</h2>
-
-<p>
-Transition flight is the most technically challenging part of the project. During transition, the
-aircraft moves from rotor-borne flight to wing-borne flight. At the same time, the front motors rotate
-forward, airspeed increases, aerodynamic lift builds and the control surfaces become more effective.
-</p>
-
-<p>
-This creates a complex control problem because the aircraft changes behaviour continuously throughout
-the transition. The goal is to manage this change smoothly without losing pitch stability, airspeed
-or control authority.
-</p>
-
-<!-- OPTIONAL IMAGE WHEN YOU HAVE IT:
-<img src="../images/vtol-transition.jpg" class="image" alt="VTOL transition flight">
--->
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Forward Flight</h2>
-
-<p>
-In forward flight, the aircraft operates more like a conventional fixed-wing UAV. The wing generates
-most of the lift and the propulsion system provides forward thrust. This is the mode intended to provide
-the efficiency advantage over a multicopter-style aircraft.
-</p>
-
-<p>
-Forward flight testing is used to evaluate stability, handling, cruise efficiency and control surface
-effectiveness. It also provides feedback on whether the aerodynamic and structural design decisions
-made earlier in the project are working as intended.
-</p>
-
-<!-- OPTIONAL IMAGE WHEN YOU HAVE IT:
-<img src="../images/vtol-flight.jpg" class="image" alt="VTOL forward flight">
--->
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Key Lessons</h2>
-
-<p>
-The biggest lesson from this project is that aircraft development is iterative. CAD, CFD and calculations
-are valuable tools, but they do not replace physical testing. Real flight testing exposed issues with
-stall behaviour, thermal deformation, structural stiffness and system integration that were not obvious
-from the digital model alone.
-</p>
-
-<p>
-This project has developed my skills in aircraft design, CAD, aerodynamics, 3D printing, electronics
-integration, flight control systems and practical debugging. More importantly, it has shown me how
-important it is to respond to test results with clear engineering changes rather than treating failures
-as dead ends.
-</p>
-
-</div>
-</section>
-
-<footer>
-Samuel Nicholson • VTOL UAV Project
-</footer>
-
-</body>
-</html>
-```
