@@ -8,122 +8,247 @@
 <title>Samuel Nicholson | Engineering Portfolio</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:Arial,sans-serif;background:#0b0f19;color:white;}
 
-.hero{
-    min-height:100vh;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0f19;
+    color: white;
+}
+
+.hero {
+    min-height: 100vh;
+
     background:
-    linear-gradient(rgba(5,10,20,0.75),rgba(5,10,20,0.9)),
-    url("images/vtol-CAD.jpg");
-    background-size:cover;
-    background-position:center 30%;
-    padding:40px 8%;
+        linear-gradient(
+            rgba(5, 10, 20, 0.72),
+            rgba(5, 10, 20, 0.92)
+        ),
+        url("images/vtol-CAD.jpg");
+
+    background-size: cover;
+    background-position: center 25%;
+    padding: 40px 7%;
 }
 
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:120px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 105px;
 }
 
-.logo{font-size:22px;font-weight:bold;}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin-left:30px;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
 }
 
-.intro{
-    max-width:800px;
-    margin-bottom:80px;
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 26px;
+    font-size: 15px;
+    opacity: 0.88;
+    transition: opacity 0.2s;
 }
 
-.intro h1{
-    font-size:72px;
-    line-height:1.1;
-    margin-bottom:25px;
+nav a:hover {
+    opacity: 1;
 }
 
-.intro p{
-    font-size:22px;
-    line-height:1.6;
-    color:#d8d8d8;
+.intro {
+    max-width: 800px;
+    margin-bottom: 80px;
 }
 
-.cta-button{
-    display:inline-block;
-    margin-top:30px;
-    padding:15px 30px;
-    background:white;
-    color:black;
-    text-decoration:none;
-    border-radius:10px;
-    font-weight:bold;
+.intro h1 {
+    font-size: 68px;
+    line-height: 1.08;
+    margin-bottom: 24px;
 }
 
-.section-title{
-    font-size:36px;
-    margin-bottom:25px;
+.intro p {
+    max-width: 720px;
+    font-size: 21px;
+    line-height: 1.6;
+    color: #d8d8d8;
 }
 
-.projects{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+.cta-button {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 14px 27px;
+    background: white;
+    color: #0b0f19;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+    transition:
+        transform 0.2s,
+        opacity 0.2s;
 }
 
-.project-card{
-    background:rgba(255,255,255,0.08);
-    border-radius:18px;
-    overflow:hidden;
-    text-decoration:none;
-    color:white;
-    transition:0.25s;
-    backdrop-filter:blur(10px);
+.cta-button:hover {
+    transform: translateY(-3px);
+    opacity: 0.92;
 }
 
-.project-card:hover{
-    transform:translateY(-10px);
-    background:rgba(255,255,255,0.14);
+.section-title {
+    font-size: 34px;
+    margin-bottom: 25px;
 }
 
-.project-card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
-    display:block;
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: stretch;
 }
 
-.project-content{
-    padding:22px;
+.project-card {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 18px;
+    overflow: hidden;
+    text-decoration: none;
+    color: white;
+    transition:
+        transform 0.25s,
+        background 0.25s,
+        border-color 0.25s;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
 }
 
-.project-content h3{
-    font-size:21px;
-    margin-bottom:10px;
+.project-card:hover {
+    transform: translateY(-9px);
+    background: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.14);
 }
 
-.project-content p{
-    color:#d0d0d0;
-    line-height:1.6;
+.project-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
 }
 
-footer{
-    background:#070a12;
-    padding:30px;
-    text-align:center;
-    color:#888;
+.project-content {
+    padding: 21px;
+    flex-grow: 1;
 }
 
-@media(max-width:800px){
-    .intro h1{font-size:46px;}
-    .intro p{font-size:18px;}
-    nav{flex-direction:column;gap:20px;}
+.project-content h3 {
+    font-size: 21px;
+    margin-bottom: 10px;
 }
+
+.project-content p {
+    color: #d0d0d0;
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+.featured-project {
+    grid-column: span 2;
+}
+
+.featured-project img {
+    height: 265px;
+}
+
+.featured-project .project-content h3 {
+    font-size: 25px;
+}
+
+.featured-project .project-content p {
+    font-size: 16px;
+    max-width: 650px;
+}
+
+.project-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 5px 9px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    color: #e5e9f2;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+footer {
+    padding: 30px;
+    background: #070a12;
+    color: #888;
+    text-align: center;
+}
+
+@media (max-width: 1100px) {
+
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .featured-project {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .hero {
+        padding: 30px 6%;
+        background-position: center 25%;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 18px;
+        margin-bottom: 80px;
+    }
+
+    nav a {
+        margin-left: 0;
+        margin-right: 16px;
+        line-height: 2;
+    }
+
+    .intro h1 {
+        font-size: 45px;
+    }
+
+    .intro p {
+        font-size: 18px;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-project {
+        grid-column: span 1;
+    }
+
+    .project-card img,
+    .featured-project img {
+        height: 220px;
+    }
+}
+
 </style>
 </head>
 
@@ -132,65 +257,178 @@ footer{
 <section class="hero">
 
 <nav>
-    <div class="logo">Samuel Nicholson</div>
-    <div>
-        <a href="#">Home</a>
-        <a href="#projects">Projects</a>
+
+    <div class="logo">
+        Samuel Nicholson
     </div>
+
+    <div>
+        <a href="index.html">Home</a>
+
+        <a href="about.html">About</a>
+
+        <a href="resume.pdf" target="_blank">
+            Resume
+        </a>
+
+        <a
+            href="https://www.linkedin.com/in/samuel-nicholson-eng"
+            target="_blank"
+            rel="noopener noreferrer">
+            LinkedIn
+        </a>
+
+        <a
+            href="https://github.com/sni671"
+            target="_blank"
+            rel="noopener noreferrer">
+            GitHub
+        </a>
+    </div>
+
 </nav>
 
+
 <div class="intro">
-    <h1>Engineering systems that fly, move, and work.</h1>
+
+    <h1>
+        Engineering systems that fly, move, and work.
+    </h1>
+
     <p>
         Mechatronics Engineering student focused on UAV development,
-        embedded systems, CAD, prototyping, and real-world engineering.
+        embedded systems, CAD, prototyping, electronics, and practical
+        engineering design.
     </p>
-    <a href="#projects" class="cta-button">View Projects</a>
+
+    <a href="#featured-projects" class="cta-button">
+        View Projects
+    </a>
+
 </div>
 
-<h2 class="section-title" id="projects">Featured Projects</h2>
+
+<h2 class="section-title" id="featured-projects">
+    Featured Projects
+</h2>
+
 
 <div class="projects">
 
-    <a class="project-card" href="projects/vtol.html">
-        <img src="images/vtol-thumb.png" alt="VTOL UAV">
+
+    <!-- Featured VTOL project -->
+
+    <a
+        class="project-card featured-project"
+        href="projects/vtol.html">
+
+        <img
+            src="images/vtol-thumb.png"
+            alt="VTOL UAV">
+
         <div class="project-content">
+
+            <span class="project-label">
+                Featured Project
+            </span>
+
             <h3>VTOL UAV</h3>
-            <p>3D printed tricopter-style VTOL aircraft designed, built and flight tested.</p>
+
+            <p>
+                A 3D-printed tricopter-style VTOL aircraft designed,
+                manufactured, wired, configured, and flight tested through
+                repeated aerodynamic, structural, and control-system iterations.
+            </p>
+
         </div>
+
     </a>
 
-    <a class="project-card" href="projects/endurance.html">
-        <img src="images/endurance-thumb.jpg" alt="Long Endurance UAV">
+
+    <!-- Long-endurance UAV -->
+
+    <a
+        class="project-card"
+        href="projects/endurance.html">
+
+        <img
+            src="images/endurance-thumb.jpg"
+            alt="Long Endurance UAV">
+
         <div class="project-content">
+
             <h3>Long Endurance UAV</h3>
-            <p>Fixed-wing aircraft focused on efficient autonomous flight and payload capability.</p>
+
+            <p>
+                A fixed-wing UAV project focused on aerodynamic efficiency,
+                lightweight construction, stability, and autonomous
+                payload-capable flight.
+            </p>
+
         </div>
+
     </a>
 
-    <a class="project-card" href="projects/hit-lab.html">
-        <img src="images/hit-thumb.jpeg" alt="HIT Lab Mixed Reality Project">
+
+    <!-- HIT Lab project -->
+
+    <a
+        class="project-card"
+        href="projects/hit-lab.html">
+
+        <img
+            src="images/hit-thumb.jpeg"
+            alt="HIT Lab Mixed Reality Project">
+
         <div class="project-content">
+
             <h3>HIT Lab Mixed Reality Project</h3>
-            <p>3D printed mechanism design, Unity development, and mixed reality tracking.</p>
+
+            <p>
+                A research project combining mechanical design,
+                3D-printed prototyping, Unity development, and mixed
+                reality tracking.
+            </p>
+
         </div>
+
     </a>
 
-    <a class="project-card" href="projects/cnc.html">
-        <img src="images/plane-print-pile.png" alt="CNC Card Dealer">
+
+    <!-- Line-following robot -->
+
+    <a
+        class="project-card"
+        href="projects/line-following-robot.html">
+
+        <img
+            src="images/lfr-final.png"
+            alt="Line Following Robot">
+
         <div class="project-content">
-            <h3>CNC Card Dealer</h3>
-            <p>Belt-driven mechatronics project combining CAD, embedded systems and manufacturing.</p>
+
+            <h3>Line Following Robot</h3>
+
+            <p>
+                An autonomous robot featuring custom control and sensor
+                PCBs, embedded C software, mechanical design iterations,
+                and a compact 3D-printed chassis.
+            </p>
+
         </div>
+
     </a>
+
 
 </div>
 
 </section>
 
+
 <footer>
-© 2026 Samuel Nicholson | Engineering Portfolio
+    © 2026 Samuel Nicholson | Engineering Portfolio
 </footer>
 
 </body>
+
 </html>
