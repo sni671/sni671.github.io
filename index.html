@@ -30,21 +30,18 @@ body {
 
     background:
         linear-gradient(
-            rgba(5, 10, 20, 0.72),
-            rgba(5, 10, 20, 0.92)
+            rgba(5, 10, 20, 0.70),
+            rgba(5, 10, 20, 0.94)
         ),
         url("images/vtol-CAD.jpg");
 
     background-size: cover;
     background-position: center 25%;
-    padding: 40px 7%;
+    padding: 40px 7% 70px;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 105px;
+.site-header {
+    margin-bottom: 95px;
 }
 
 .logo {
@@ -53,22 +50,9 @@ nav {
     letter-spacing: 0.3px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 26px;
-    font-size: 15px;
-    opacity: 0.88;
-    transition: opacity 0.2s;
-}
-
-nav a:hover {
-    opacity: 1;
-}
-
 .intro {
-    max-width: 800px;
-    margin-bottom: 80px;
+    max-width: 820px;
+    margin-bottom: 75px;
 }
 
 .intro h1 {
@@ -78,29 +62,10 @@ nav a:hover {
 }
 
 .intro p {
-    max-width: 720px;
+    max-width: 730px;
     font-size: 21px;
-    line-height: 1.6;
+    line-height: 1.65;
     color: #d8d8d8;
-}
-
-.cta-button {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 14px 27px;
-    background: white;
-    color: #0b0f19;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition:
-        transform 0.2s,
-        opacity 0.2s;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    opacity: 0.92;
 }
 
 .section-title {
@@ -117,7 +82,7 @@ nav a:hover {
 
 .project-card {
     background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.07);
     border-radius: 18px;
     overflow: hidden;
     text-decoration: none;
@@ -134,7 +99,7 @@ nav a:hover {
 .project-card:hover {
     transform: translateY(-9px);
     background: rgba(255, 255, 255, 0.14);
-    border-color: rgba(255, 255, 255, 0.14);
+    border-color: rgba(255, 255, 255, 0.16);
 }
 
 .project-card img {
@@ -160,23 +125,6 @@ nav a:hover {
     line-height: 1.55;
 }
 
-.featured-project {
-    grid-column: span 2;
-}
-
-.featured-project img {
-    height: 265px;
-}
-
-.featured-project .project-content h3 {
-    font-size: 25px;
-}
-
-.featured-project .project-content p {
-    font-size: 16px;
-    max-width: 650px;
-}
-
 .project-label {
     display: inline-block;
     margin-bottom: 10px;
@@ -187,6 +135,49 @@ nav a:hover {
     font-size: 12px;
     letter-spacing: 0.5px;
     text-transform: uppercase;
+}
+
+.featured-project {
+    grid-column: span 2;
+}
+
+.featured-project img {
+    height: 285px;
+}
+
+.featured-project .project-content {
+    padding: 24px;
+}
+
+.featured-project .project-content h3 {
+    font-size: 26px;
+}
+
+.featured-project .project-content p {
+    max-width: 700px;
+    font-size: 16px;
+}
+
+.drone-project {
+    grid-column: span 2;
+}
+
+.drone-project img {
+    height: 285px;
+    object-position: center 32%;
+}
+
+.drone-project .project-content {
+    padding: 24px;
+}
+
+.drone-project .project-content h3 {
+    font-size: 25px;
+}
+
+.drone-project .project-content p {
+    font-size: 16px;
+    max-width: 700px;
 }
 
 footer {
@@ -202,7 +193,8 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    .featured-project {
+    .featured-project,
+    .drone-project {
         grid-column: span 2;
     }
 }
@@ -210,21 +202,12 @@ footer {
 @media (max-width: 760px) {
 
     .hero {
-        padding: 30px 6%;
+        padding: 30px 6% 55px;
         background-position: center 25%;
     }
 
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-        margin-bottom: 80px;
-    }
-
-    nav a {
-        margin-left: 0;
-        margin-right: 16px;
-        line-height: 2;
+    .site-header {
+        margin-bottom: 70px;
     }
 
     .intro h1 {
@@ -239,12 +222,14 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    .featured-project {
+    .featured-project,
+    .drone-project {
         grid-column: span 1;
     }
 
     .project-card img,
-    .featured-project img {
+    .featured-project img,
+    .drone-project img {
         height: 220px;
     }
 }
@@ -256,37 +241,13 @@ footer {
 
 <section class="hero">
 
-<nav>
+<header class="site-header">
 
     <div class="logo">
         Samuel Nicholson
     </div>
 
-    <div>
-        <a href="index.html">Home</a>
-
-        <a href="about.html">About</a>
-
-        <a href="resume.pdf" target="_blank">
-            Resume
-        </a>
-
-        <a
-            href="https://www.linkedin.com/in/samuel-nicholson-eng"
-            target="_blank"
-            rel="noopener noreferrer">
-            LinkedIn
-        </a>
-
-        <a
-            href="https://github.com/sni671"
-            target="_blank"
-            rel="noopener noreferrer">
-            GitHub
-        </a>
-    </div>
-
-</nav>
+</header>
 
 
 <div class="intro">
@@ -296,19 +257,15 @@ footer {
     </h1>
 
     <p>
-        Mechatronics Engineering student focused on UAV development,
-        embedded systems, CAD, prototyping, electronics, and practical
-        engineering design.
+        Mechatronics Engineering student with hands-on experience in UAV
+        development, embedded systems, CAD, electronics, additive manufacturing,
+        flight testing and practical engineering problem-solving.
     </p>
-
-    <a href="#featured-projects" class="cta-button">
-        View Projects
-    </a>
 
 </div>
 
 
-<h2 class="section-title" id="featured-projects">
+<h2 class="section-title">
     Featured Projects
 </h2>
 
@@ -316,7 +273,7 @@ footer {
 <div class="projects">
 
 
-    <!-- Featured VTOL project -->
+    <!-- VTOL UAV -->
 
     <a
         class="project-card featured-project"
@@ -336,8 +293,8 @@ footer {
 
             <p>
                 A 3D-printed tricopter-style VTOL aircraft designed,
-                manufactured, wired, configured, and flight tested through
-                repeated aerodynamic, structural, and control-system iterations.
+                manufactured and flight tested through repeated aerodynamic,
+                structural and flight-control iterations.
             </p>
 
         </div>
@@ -345,7 +302,36 @@ footer {
     </a>
 
 
-    <!-- Long-endurance UAV -->
+    <!-- FPV Drones and Flight Club -->
+
+    <a
+        class="project-card drone-project"
+        href="projects/drone-experience.html">
+
+        <img
+            src="images/flight-me.png"
+            alt="FPV Drones and University of Canterbury Flight Club">
+
+        <div class="project-content">
+
+            <span class="project-label">
+                Leadership & Practical Experience
+            </span>
+
+            <h3>FPV Drones & UC Flight Club</h3>
+
+            <p>
+                Building, maintaining and flying FPV aircraft while leading
+                the drone activities of the University of Canterbury Flight
+                Club and supporting weekly flight sessions.
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <!-- Long Endurance UAV -->
 
     <a
         class="project-card"
@@ -361,7 +347,7 @@ footer {
 
             <p>
                 A fixed-wing UAV project focused on aerodynamic efficiency,
-                lightweight construction, stability, and autonomous
+                lightweight construction, stability and autonomous
                 payload-capable flight.
             </p>
 
@@ -370,7 +356,7 @@ footer {
     </a>
 
 
-    <!-- HIT Lab project -->
+    <!-- HIT Lab -->
 
     <a
         class="project-card"
@@ -385,9 +371,9 @@ footer {
             <h3>HIT Lab Mixed Reality Project</h3>
 
             <p>
-                A research project combining mechanical design,
-                3D-printed prototyping, Unity development, and mixed
-                reality tracking.
+                A research project combining mechanical design, iterative
+                3D-printed prototyping, Unity development and mixed-reality
+                tracking.
             </p>
 
         </div>
@@ -395,7 +381,7 @@ footer {
     </a>
 
 
-    <!-- Line-following robot -->
+    <!-- Line Following Robot -->
 
     <a
         class="project-card"
@@ -410,9 +396,9 @@ footer {
             <h3>Line Following Robot</h3>
 
             <p>
-                An autonomous robot featuring custom control and sensor
-                PCBs, embedded C software, mechanical design iterations,
-                and a compact 3D-printed chassis.
+                An autonomous robot featuring custom control and sensor PCBs,
+                embedded C software, mechanical design iterations and a compact
+                3D-printed chassis.
             </p>
 
         </div>
