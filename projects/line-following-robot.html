@@ -1,0 +1,762 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Line Following Robot | Samuel Nicholson</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0f19;
+    color: white;
+    line-height: 1.7;
+}
+
+.container {
+    width: 88%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+nav {
+    position: absolute;
+    top: 34px;
+    left: 6%;
+    right: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+}
+
+nav a:hover {
+    opacity: 0.75;
+}
+
+.hero {
+    min-height: 78vh;
+
+    background:
+        linear-gradient(
+            rgba(5, 10, 20, 0.55),
+            rgba(5, 10, 20, 0.94)
+        ),
+        url("../images/lfr-final.png");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: 68px;
+    line-height: 1.08;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 21px;
+    color: #d5d8df;
+    max-width: 700px;
+}
+
+.button {
+    display: inline-block;
+    margin-top: 28px;
+    padding: 14px 26px;
+    background: white;
+    color: #0b0f19;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.page-links {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #101626;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.page-links .container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.page-links a {
+    color: #d0d5df;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.page-links a:hover {
+    color: white;
+}
+
+section {
+    padding: 78px 0;
+}
+
+section.alt {
+    background: #0e1422;
+}
+
+h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #d0d0d0;
+    margin-bottom: 17px;
+}
+
+strong {
+    color: white;
+}
+
+.lead {
+    font-size: 20px;
+    color: #e0e3e8;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.two-column.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+.image-card {
+    background: #151b2d;
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.image-card img {
+    width: 100%;
+    max-height: 430px;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+
+.caption {
+    color: #9299a8;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.spec {
+    background: #151b2d;
+    padding: 21px;
+    border-radius: 14px;
+}
+
+.spec strong {
+    display: block;
+    margin-bottom: 6px;
+}
+
+.timeline {
+    display: grid;
+    gap: 22px;
+    margin-top: 28px;
+}
+
+.timeline-item {
+    background: #151b2d;
+    border-left: 4px solid #8ab4ff;
+    padding: 25px;
+    border-radius: 14px;
+}
+
+.timeline-item h3 {
+    margin-bottom: 8px;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.result {
+    background: #151b2d;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.result .number {
+    display: block;
+    font-size: 34px;
+    font-weight: bold;
+    margin-bottom: 6px;
+}
+
+ul {
+    color: #d0d0d0;
+    margin: 16px 0 18px 22px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+footer {
+    background: #070a12;
+    color: #888;
+    text-align: center;
+    padding: 36px;
+}
+
+@media (max-width: 850px) {
+
+    nav {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 75vh;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .two-column,
+    .two-column.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .image-card {
+        order: 2;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="logo">
+        Samuel Nicholson
+    </div>
+
+    <div>
+        <a href="../index.html">Home</a>
+        <a href="../index.html#projects">Projects</a>
+    </div>
+
+</nav>
+
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>Line Following Robot</h1>
+
+            <p>
+                A compact autonomous robot developed through PCB design,
+                mechanical iteration and embedded control, achieving reliable
+                sub-30-second course completion.
+            </p>
+
+            <a href="#overview" class="button">
+                View Project
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="page-links">
+
+    <div class="container">
+
+        <a href="#overview">Overview</a>
+        <a href="#electronics">Electronics</a>
+        <a href="#mechanical">Mechanical Design</a>
+        <a href="#software">Software</a>
+        <a href="#results">Results</a>
+
+    </div>
+
+</div>
+
+
+<section id="overview">
+
+<div class="container">
+
+<h2>Project Overview</h2>
+
+<p class="lead">
+The objective of this project was to design and build an autonomous robot
+capable of following a marked course quickly and reliably using a custom
+electronic, mechanical and software system.
+</p>
+
+<p>
+The project was divided into three main areas: designing the control and
+sensor PCBs, developing the mechanical chassis and drivetrain, and writing
+the embedded software used to interpret the sensors and control the motors.
+</p>
+
+<p>
+The final robot had to weigh less than 400 g, use only the supplied
+components and complete the course in under 30 seconds with at least a
+90% success rate.
+</p>
+
+<div class="spec-grid">
+
+    <div class="spec">
+        <strong>Final Mass</strong>
+        315.5 g
+    </div>
+
+    <div class="spec">
+        <strong>Control Method</strong>
+        Bang-Bang control
+    </div>
+
+    <div class="spec">
+        <strong>Sensor Array</strong>
+        Five TCRT5000 optical sensors
+    </div>
+
+    <div class="spec">
+        <strong>Microcontroller</strong>
+        ATmega328P
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="electronics" class="alt">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>Electrical & PCB Design</h2>
+
+        <p>
+            The electrical system used two separate printed circuit boards:
+            a main controller board and a dedicated sensor board. Separating
+            the boards improved modularity and made testing, wiring and
+            debugging easier.
+        </p>
+
+        <p>
+            The main PCB contained the ATmega328P microcontroller, power
+            regulation, motor drivers, programming connections, status LEDs
+            and sensor inputs.
+        </p>
+
+        <p>
+            The sensor board used five TCRT5000 reflective optical sensors.
+            Using five sensors provided more information about the robot's
+            position relative to the line and allowed the outer sensors to
+            detect sharper turns.
+        </p>
+
+        <ul>
+            <li>ATmega328P microcontroller</li>
+            <li>Five reflective line sensors</li>
+            <li>PWM motor control</li>
+            <li>Separate power regulation</li>
+            <li>Modular headers and test points</li>
+        </ul>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/lfr-pcb.png"
+            alt="Line following robot PCB">
+
+        <p class="caption">
+            Custom controller and sensor PCBs used for sensing, motor control
+            and embedded processing.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="mechanical">
+
+<div class="container">
+
+<h2>Mechanical Design Iterations</h2>
+
+<p>
+The mechanical system progressed through three major versions. Each
+iteration addressed problems identified during testing, particularly sensor
+placement, torque, wheelbase width and chassis weight.
+</p>
+
+
+<div class="timeline">
+
+    <div class="timeline-item">
+
+        <div class="two-column">
+
+            <div>
+
+                <h3>Mark 1 — Initial Prototype</h3>
+
+                <p>
+                    The first version used a laser-cut wooden base with
+                    3D-printed motor mounts, wheels and gears. It provided a
+                    quick starting point but exposed several major problems.
+                </p>
+
+                <p>
+                    The sensors were positioned too far ahead of the axle,
+                    causing delayed steering response and frequent corner
+                    overshoot. The gear ratio also provided insufficient
+                    torque, causing the motors to stall at lower speeds.
+                </p>
+
+            </div>
+
+            <div class="image-card">
+
+                <img
+                    src="../images/lfr-mk1.png"
+                    alt="First line following robot design">
+
+                <p class="caption">
+                    Initial wooden chassis with 3D-printed drivetrain
+                    components.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="two-column reverse">
+
+            <div class="image-card">
+
+                <img
+                    src="../images/lfr-mk2.png"
+                    alt="Second line following robot design">
+
+                <p class="caption">
+                    Shortened second iteration with the sensors moved closer
+                    to the axle.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Mark 2 — Revised Layout</h3>
+
+                <p>
+                    The second version reused most of the original components
+                    but shortened the base and repositioned the electronics to
+                    move the sensors closer to the axle.
+                </p>
+
+                <p>
+                    This improved cornering response, but the wide wheelbase
+                    still limited agility and the unchanged gear ratio meant
+                    the motors continued to stall.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="timeline-item">
+
+        <div class="two-column">
+
+            <div>
+
+                <h3>Final Design</h3>
+
+                <p>
+                    The final version was a complete redesign focused on
+                    compactness, lower mass and increased drivetrain torque.
+                </p>
+
+                <p>
+                    A third gear was added between each motor and wheel,
+                    increasing the theoretical torque by approximately
+                    4.4 times. The wooden base was replaced by a fully
+                    3D-printed chassis with integrated supports, cable routing
+                    and component mounts.
+                </p>
+
+                <p>
+                    The narrower wheelbase improved manoeuvrability, while the
+                    centrally aligned battery, controller and sensors produced
+                    better weight distribution.
+                </p>
+
+            </div>
+
+            <div class="image-card">
+
+                <img
+                    src="../images/lfr-final-cad.png"
+                    alt="Final line following robot CAD design">
+
+                <p class="caption">
+                    Final compact CAD design incorporating the revised gear
+                    train and integrated 3D-printed chassis.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="software" class="alt">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>Embedded Control Software</h2>
+
+        <p>
+            The robot used a Bang-Bang control approach running on the
+            ATmega328P. The five sensors were read through the
+            microcontroller's analogue inputs, while PWM outputs controlled
+            the speed of the two motors.
+        </p>
+
+        <p>
+            The difference between the central sensors was used to determine
+            which direction the robot needed to turn. The two outer sensors
+            detected larger deviations and triggered stronger left or right
+            corrections for tight corners.
+        </p>
+
+        <p>
+            The initial software only pulsed one motor at a time. This caused
+            aggressive oscillation around the line and made the robot unstable
+            when approaching tighter turns.
+        </p>
+
+        <p>
+            The control logic was improved by applying different PWM values to
+            both motors simultaneously. This produced smoother convergence
+            toward the line and significantly improved reliability.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/lfr-final.png"
+            alt="Completed line following robot">
+
+        <p class="caption">
+            Completed robot with the custom PCB, five-sensor board and final
+            3D-printed chassis.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="results">
+
+<div class="container">
+
+<h2>Results</h2>
+
+<p>
+The early versions struggled to complete the full course consistently.
+The final mechanical redesign solved the major torque and handling issues,
+after which software tuning was used to increase speed while preserving
+reliability.
+</p>
+
+<div class="results-grid">
+
+    <div class="result">
+        <span class="number">315.5 g</span>
+        Final robot mass
+    </div>
+
+    <div class="result">
+        <span class="number">4.4×</span>
+        Approximate torque increase
+    </div>
+
+    <div class="result">
+        <span class="number">&lt;30 s</span>
+        Course completion time
+    </div>
+
+    <div class="result">
+        <span class="number">90%</span>
+        Final completion reliability
+    </div>
+
+</div>
+
+<p style="margin-top: 30px;">
+The project demonstrated how closely linked mechanical design, electronics
+and software are in a mechatronic system. The largest performance improvement
+did not come from a single area, but from redesigning the drivetrain,
+repositioning the sensors, reducing the chassis mass and refining the control
+logic together.
+</p>
+
+</div>
+
+</section>
+
+
+<section class="alt">
+
+<div class="container">
+
+<h2>Key Lessons</h2>
+
+<p>
+The most important lesson from this project was that software cannot fully
+compensate for poor mechanical design. The initial control system struggled
+because the sensors, wheelbase and gear ratio made the robot inherently
+difficult to control.
+</p>
+
+<p>
+Once the mechanical system was redesigned, the software became much easier
+to tune and the robot's reliability improved substantially. The project also
+developed my experience in PCB design, embedded C, sensor integration,
+mechanical iteration, 3D printing and system-level debugging.
+</p>
+
+</div>
+
+</section>
+
+
+<footer>
+Samuel Nicholson • Line Following Robot Project
+</footer>
+
+</body>
+
+</html>
+```
