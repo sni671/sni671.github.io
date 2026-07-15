@@ -2,350 +2,964 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HIT Lab Project | Samuel Nicholson</title>
+    <title>HIT Lab Mixed Reality Project | Samuel Nicholson</title>
 
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:Arial,sans-serif;background:#0b0f19;color:white;line-height:1.7;}
-.container{width:88%;max-width:1150px;margin:auto;}
+    <style>
+        :root {
+            --background: #080c14;
+            --background-light: #0d1320;
+            --card: #121a2a;
+            --card-hover: #172237;
+            --text: #ffffff;
+            --text-secondary: #c5cad3;
+            --text-muted: #8f98a8;
+            --border: rgba(255, 255, 255, 0.1);
+            --accent: #5f9cff;
+        }
 
-nav{
-    position:absolute;
-    top:35px;
-    left:6%;
-    right:6%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:10;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-nav a{color:white;text-decoration:none;margin-left:25px;}
-.logo{font-weight:bold;font-size:22px;}
+        html {
+            scroll-behavior: smooth;
+        }
 
-.hero{
-    min-height:85vh;
-    background:
-    linear-gradient(rgba(5,10,20,0.55),rgba(5,10,20,0.92)),
-    url("../images/hit-hero.jpeg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    align-items:center;
-}
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-.hero-content{max-width:800px;}
+        img {
+            display: block;
+        }
 
-.hero h1{
-    font-size:68px;
-    line-height:1.1;
-    margin-bottom:20px;
-}
+        a {
+            color: inherit;
+        }
 
-.hero p{
-    font-size:22px;
-    color:#d8d8d8;
-}
+        .container {
+            width: 88%;
+            max-width: 1150px;
+            margin: 0 auto;
+        }
 
-section{padding:80px 0;}
+        /* Navigation */
 
-h2{
-    font-size:38px;
-    margin-bottom:25px;
-}
+        nav {
+            position: absolute;
+            top: 28px;
+            left: 6%;
+            right: 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 20;
+        }
 
-h3{
-    margin-top:28px;
-    margin-bottom:10px;
-    font-size:24px;
-}
+        .logo {
+            color: white;
+            font-size: 21px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 0.2px;
+        }
 
-p{
-    color:#d0d0d0;
-    margin-bottom:18px;
-}
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 28px;
+        }
 
-.image{
-    width:100%;
-    border-radius:16px;
-    margin:25px 0;
-}
+        .nav-links a {
+            position: relative;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.25s ease;
+        }
 
-.image-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:25px;
-    margin:25px 0;
-}
+        .nav-links a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.25s ease;
+        }
 
-.image-grid img{
-    width:100%;
-    border-radius:16px;
-}
+        .nav-links a:hover {
+            color: white;
+        }
 
-.caption{
-    color:#9f9f9f;
-    font-size:14px;
-    margin-top:-12px;
-    margin-bottom:28px;
-}
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-.card{
-    background:#151b2d;
-    padding:28px;
-    border-radius:16px;
-    margin:28px 0;
-}
+        /* Hero */
 
-footer{
-    padding:35px;
-    background:#070a12;
-    text-align:center;
-    color:#888;
-}
+        .hero {
+            position: relative;
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(5, 9, 17, 0.96) 0%,
+                    rgba(5, 9, 17, 0.82) 42%,
+                    rgba(5, 9, 17, 0.4) 75%,
+                    rgba(5, 9, 17, 0.65) 100%
+                ),
+                linear-gradient(
+                    0deg,
+                    var(--background) 0%,
+                    transparent 30%
+                ),
+                url("../images/hit-hero.jpeg");
 
-@media(max-width:800px){
-    .hero h1{font-size:44px;}
-    .hero p{font-size:18px;}
-    nav{flex-direction:column;gap:15px;}
-}
-</style>
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-content {
+            max-width: 790px;
+            padding-top: 70px;
+        }
+
+        .project-label {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: #d9e7ff;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            max-width: 850px;
+            margin-bottom: 24px;
+            font-size: clamp(48px, 6.4vw, 78px);
+            line-height: 1.04;
+            letter-spacing: -2.5px;
+        }
+
+        .hero-description {
+            max-width: 720px;
+            margin-bottom: 30px;
+            color: #d6d9df;
+            font-size: clamp(18px, 2vw, 22px);
+            line-height: 1.6;
+        }
+
+        .project-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-detail {
+            padding: 8px 14px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            border-radius: 100px;
+            background: rgba(8, 13, 23, 0.46);
+            color: #e3e7ed;
+            font-size: 13px;
+            backdrop-filter: blur(8px);
+        }
+
+        /* General sections */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-alt {
+            background: var(--background-light);
+        }
+
+        .section-heading {
+            max-width: 850px;
+            margin-bottom: 38px;
+        }
+
+        .section-label {
+            display: block;
+            margin-bottom: 10px;
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1.7px;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: clamp(34px, 4vw, 46px);
+            line-height: 1.16;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            margin-bottom: 12px;
+            font-size: 23px;
+            line-height: 1.3;
+        }
+
+        p {
+            max-width: 900px;
+            margin-bottom: 18px;
+            color: var(--text-secondary);
+            font-size: 17px;
+        }
+
+        /* Images */
+
+        .image {
+            width: 100%;
+            margin-top: 38px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.28);
+        }
+
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 38px;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 100%;
+            min-height: 320px;
+            object-fit: cover;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 20px 55px rgba(0, 0, 0, 0.25);
+        }
+
+        .caption {
+            max-width: none;
+            margin-top: 12px;
+            margin-bottom: 0;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Two-column layouts */
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            gap: 65px;
+            align-items: center;
+        }
+
+        .content-grid.reverse {
+            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        }
+
+        .content-grid .image {
+            margin: 0;
+        }
+
+        /* Cards */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+            margin-top: 40px;
+        }
+
+        .card {
+            padding: 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--card);
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease,
+                border-color 0.25s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            background: var(--card-hover);
+            border-color: rgba(255, 255, 255, 0.17);
+        }
+
+        .card p {
+            margin-bottom: 0;
+            font-size: 16px;
+        }
+
+        /* Results */
+
+        .results-list {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 36px;
+        }
+
+        .result-item {
+            position: relative;
+            padding: 22px 24px 22px 52px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.025);
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        .result-item::before {
+            content: "✓";
+            position: absolute;
+            top: 21px;
+            left: 22px;
+            color: var(--accent);
+            font-weight: 700;
+        }
+
+        /* Bottom navigation */
+
+        .project-navigation {
+            padding: 65px 0;
+            border-top: 1px solid var(--border);
+            background: #070a11;
+        }
+
+        .project-navigation-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition:
+                gap 0.25s ease,
+                opacity 0.25s ease;
+        }
+
+        .back-link:hover {
+            gap: 15px;
+            opacity: 0.82;
+        }
+
+        .back-link span {
+            font-size: 20px;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 30px 6%;
+            background: #05070c;
+            color: #7e8795;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 900px) {
+            .content-grid,
+            .content-grid.reverse {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .content-grid.reverse .content-copy {
+                order: 1;
+            }
+
+            .content-grid.reverse .content-media {
+                order: 2;
+            }
+
+            .image-grid img {
+                min-height: 260px;
+            }
+        }
+
+        @media (max-width: 750px) {
+            nav {
+                top: 22px;
+                left: 5%;
+                right: 5%;
+            }
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+            .hero {
+                min-height: 82vh;
+                background-position: 62% center;
+            }
+
+            .hero-content {
+                padding-top: 100px;
+            }
+
+            .hero h1 {
+                letter-spacing: -1.5px;
+            }
+
+            section {
+                padding: 75px 0;
+            }
+
+            .container {
+                width: 90%;
+            }
+
+            .image-grid,
+            .card-grid,
+            .results-list {
+                grid-template-columns: 1fr;
+            }
+
+            .image-grid img {
+                min-height: 0;
+            }
+
+            .project-navigation-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 520px) {
+            nav {
+                align-items: flex-start;
+            }
+
+            .nav-links {
+                gap: 13px;
+            }
+
+            .nav-links a:nth-child(2) {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 18px;
+            }
+
+            .project-detail {
+                font-size: 12px;
+            }
+
+            h2 {
+                font-size: 34px;
+            }
+
+            p {
+                font-size: 16px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-    <div class="logo">Samuel Nicholson</div>
-    <div>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#projects">Projects</a>
-    </div>
-</nav>
+    <nav>
+        <a class="logo" href="../index.html">Samuel Nicholson</a>
 
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>HIT Lab Mixed Reality Project</h1>
-            <p>
-                A research internship project involving mechanical design,
-                3D printed prototyping, Unity development, and mixed reality tracking.
-            </p>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="../index.html#about">About</a>
+            <a href="../index.html#projects">Projects</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <div class="hero-content">
+
+                <span class="project-label">Research Internship Project</span>
+
+                <h1>HIT Lab Mixed Reality Project</h1>
+
+                <p class="hero-description">
+                    A research project combining mechanical design, iterative
+                    3D-printed prototyping, Unity development and mixed reality tracking.
+                </p>
+
+                <div class="project-details">
+                    <span class="project-detail">Mechanical Design</span>
+                    <span class="project-detail">3D Printing</span>
+                    <span class="project-detail">Unity</span>
+                    <span class="project-detail">C#</span>
+                    <span class="project-detail">Mixed Reality</span>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Project overview -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Overview</span>
+                    <h2>Project Overview</h2>
+                </div>
+
+                <p>
+                    During my time at the Human Interface Technology Lab, I worked
+                    on the design and development of a physical latching button
+                    mechanism intended for mixed reality interaction.
+                </p>
+
+                <p>
+                    The project combined mechanical prototyping with Unity
+                    development. My work involved researching existing latching
+                    mechanisms, designing and 3D printing my own mechanism,
+                    learning Unity fundamentals, and beginning to track the
+                    physical design inside a mixed reality environment.
+                </p>
+
+                <img
+                    src="../images/hit-results.jpeg"
+                    class="image"
+                    alt="Final 3D-printed HIT Lab button prototypes"
+                >
+
+                <p class="caption">
+                    Final 3D-printed button prototypes developed during the project.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Research -->
+
+        <section class="section-alt">
+            <div class="container">
+
+                <div class="content-grid">
+
+                    <div class="content-copy">
+                        <span class="section-label">01 — Research</span>
+                        <h2>Research and Concept Development</h2>
+
+                        <p>
+                            The first stage involved researching existing latching
+                            and push-push button mechanisms. I investigated how
+                            different designs achieved state changes, how they
+                            could be manufactured, and which concepts were
+                            realistic to prototype using 3D printing.
+                        </p>
+
+                        <p>
+                            This phase helped define the design direction before
+                            I began developing my own mechanism. I used existing
+                            examples, printed test pieces and idea mapping to
+                            identify the most practical approach.
+                        </p>
+                    </div>
+
+                    <div class="content-media">
+                        <img
+                            src="../images/hit-research.png"
+                            class="image"
+                            alt="HIT Lab mechanism research and idea development"
+                        >
+
+                        <p class="caption">
+                            Research and concept development for potential
+                            latching mechanism designs.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mechanical design -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">02 — Mechanical Design</span>
+                    <h2>Developing the Mechanism</h2>
+
+                    <p>
+                        The initial mechanism was designed in Onshape to quickly
+                        test the basic geometry and understand how the moving
+                        components would interact.
+                    </p>
+
+                    <p>
+                        I then moved to Autodesk Fusion to develop the design
+                        more robustly using a parametric workflow. This made it
+                        easier to adjust clearances, tolerances, spring positions
+                        and overall dimensions as the mechanism evolved.
+                    </p>
+                </div>
+
+                <div class="image-grid">
+                    <img
+                        src="../images/hit-design-1.png"
+                        alt="Initial HIT Lab latching mechanism design"
+                    >
+
+                    <img
+                        src="../images/hit-design-2.png"
+                        alt="Improved cylindrical HIT Lab mechanism design"
+                    >
+                </div>
+
+                <p class="caption">
+                    Development from the initial concept toward the improved
+                    cylindrical mechanism.
+                </p>
+
+                <p>
+                    One of the key design improvements was moving toward a
+                    cylindrical form. This made the mechanism more ergonomic to
+                    hold and reduced the effect of gravity and orientation on
+                    its behaviour.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Spring mechanism -->
+
+        <section class="section-alt">
+            <div class="container">
+
+                <div class="content-grid reverse">
+
+                    <div class="content-media">
+                        <img
+                            src="../images/hit-springs.png"
+                            class="image"
+                            alt="Spring mechanism development"
+                        >
+
+                        <p class="caption">
+                            Development of the spring arrangement and internal
+                            button behaviour.
+                        </p>
+                    </div>
+
+                    <div class="content-copy">
+                        <span class="section-label">03 — Mechanism Development</span>
+                        <h2>Spring and Latching System</h2>
+
+                        <p>
+                            The spring system was a critical part of the design.
+                            It controlled how the button moved, returned and
+                            latched between its two states.
+                        </p>
+
+                        <p>
+                            This required testing the interaction between printed
+                            geometry, spring force, friction and clearances.
+                            Small tolerance changes had a noticeable effect on
+                            whether the mechanism moved smoothly or became bound.
+                        </p>
+
+                        <p>
+                            The geometry and spring arrangement were refined
+                            together rather than treated as independent parts,
+                            allowing the overall feel and reliability of the
+                            mechanism to improve with each iteration.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Prototyping -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">04 — Prototyping</span>
+                    <h2>Iterative Design and Testing</h2>
+
+                    <p>
+                        The mechanism was developed through repeated 3D printing,
+                        assembly and physical testing. Each version revealed new
+                        issues involving tolerances, friction, ergonomics or
+                        printability.
+                    </p>
+                </div>
+
+                <div class="card-grid">
+
+                    <article class="card">
+                        <h3>Designing for 3D Printing</h3>
+
+                        <p>
+                            Clearances that appeared suitable in CAD did not
+                            always behave the same way once printed. Layer lines,
+                            surface finish, friction and small dimensional errors
+                            all affected the movement of the mechanism.
+                        </p>
+                    </article>
+
+                    <article class="card">
+                        <h3>Mechanism Feel</h3>
+
+                        <p>
+                            The mechanism needed to be functional, comfortable
+                            and intuitive. Its shape, travel, spring force and
+                            latching behaviour therefore had to be considered
+                            together.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Unity -->
+
+        <section class="section-alt">
+            <div class="container">
+
+                <div class="content-grid">
+
+                    <div class="content-copy">
+                        <span class="section-label">05 — Software Development</span>
+                        <h2>Unity Development</h2>
+
+                        <p>
+                            A major part of the project was learning Unity and
+                            using it to connect the physical mechanism with a
+                            digital mixed reality environment.
+                        </p>
+
+                        <p>
+                            This involved learning the Unity hierarchy, writing
+                            scripts in C#, working with prefabs, importing and
+                            using the Meta SDK, setting up player and camera
+                            behaviour, and experimenting with animations.
+                        </p>
+
+                        <p>
+                            This gave me experience working outside my usual
+                            mechanical and embedded development environments and
+                            required me to understand how a physical device could
+                            be represented within interactive software.
+                        </p>
+                    </div>
+
+                    <div class="content-media">
+                        <img
+                            src="../images/hit-unity.png"
+                            class="image"
+                            alt="HIT Lab project development inside Unity"
+                        >
+
+                        <p class="caption">
+                            Unity development used to begin integrating the
+                            physical mechanism with a mixed reality environment.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Mixed reality tracking -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">06 — Mixed Reality</span>
+                    <h2>Physical Object Tracking</h2>
+
+                    <p>
+                        Once the mechanism had been designed and printed, the
+                        next stage was tracking it inside Unity. The goal was to
+                        create a connection between the physical object and its
+                        digital representation.
+                    </p>
+
+                    <p>
+                        This introduced a different set of challenges from the
+                        mechanical design work. I had to consider how the object
+                        would be recognised, tracked and accurately represented
+                        within a mixed reality environment.
+                    </p>
+                </div>
+
+                <img
+                    src="../images/hit-tracking.gif"
+                    class="image"
+                    alt="Mixed reality tracking test of the physical mechanism"
+                >
+
+                <p class="caption">
+                    Tracking test used to represent the physical mechanism
+                    inside Unity.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Results -->
+
+        <section class="section-alt">
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Outcome</span>
+                    <h2>Results and Future Development</h2>
+
+                    <p>
+                        By the end of the project, I had taken the mechanism from
+                        early research and concept development through to a
+                        functional physical prototype and its initial integration
+                        into a mixed reality environment.
+                    </p>
+                </div>
+
+                <div class="results-list">
+                    <div class="result-item">
+                        Researched existing push-push and latching mechanisms
+                    </div>
+
+                    <div class="result-item">
+                        Designed a custom 3D-printable mechanism
+                    </div>
+
+                    <div class="result-item">
+                        Developed a more ergonomic cylindrical design
+                    </div>
+
+                    <div class="result-item">
+                        Refined tolerances through physical prototyping
+                    </div>
+
+                    <div class="result-item">
+                        Learned core Unity and C# development workflows
+                    </div>
+
+                    <div class="result-item">
+                        Began tracking the physical prototype in mixed reality
+                    </div>
+                </div>
+
+                <p style="margin-top: 38px;">
+                    Future development would involve improving the tracking
+                    method, resolving the remaining Unity-side issues and adding
+                    functionality that allows Unity to identify the physical
+                    state of the mechanism.
+                </p>
+
+            </div>
+        </section>
+
+        <!-- Lessons -->
+
+        <section>
+            <div class="container">
+
+                <div class="section-heading">
+                    <span class="section-label">Reflection</span>
+                    <h2>Key Lessons</h2>
+                </div>
+
+                <p>
+                    This project broadened my understanding of mechatronics
+                    beyond traditional robotics and UAV work. It required
+                    mechanical design, additive manufacturing, user-interaction
+                    thinking, software development and mixed reality integration.
+                </p>
+
+                <p>
+                    The biggest lesson was that physical-digital interaction
+                    requires both effective mechanical design and careful
+                    software integration. A mechanism can work well physically,
+                    but further consideration is required for it to operate
+                    effectively as part of an interactive mixed reality system.
+                </p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <div class="project-navigation">
+        <div class="container project-navigation-inner">
+
+            <a href="../index.html#projects" class="back-link">
+                <span>←</span>
+                Return to projects
+            </a>
+
+            <a href="../index.html" class="back-link">
+                Return home
+                <span>→</span>
+            </a>
+
         </div>
     </div>
-</section>
 
-<section>
-<div class="container">
-
-<h2>Project Overview</h2>
-
-<p>
-During my time at the Human Interface Technology Lab, I worked on the design and development
-of a physical latching button mechanism intended for mixed reality interaction.
-</p>
-
-<p>
-The project combined mechanical prototyping with Unity development. My work involved researching
-existing latching mechanisms, designing and 3D printing my own mechanism, learning Unity basics,
-and beginning to track the physical design inside a mixed reality environment.
-</p>
-
-<img src="../images/hit-results.jpeg" class="image" alt="HIT Lab prototype results">
-<p class="caption">Final 3D printed button prototypes developed during the project.</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Research Phase</h2>
-
-<p>
-The first stage involved researching existing latching and push-push button mechanisms. I looked at
-how different mechanisms achieved state changes, how they could be manufactured, and which designs
-were realistic to prototype using 3D printing.
-</p>
-
-<p>
-This phase helped define the design direction before starting my own mechanism. I used research,
-printed examples, and idea mapping to decide which approach was most practical.
-</p>
-
-<img src="../images/hit-research.png" class="image" alt="Research board and mechanism examples">
-<p class="caption">Research and idea development for possible latching mechanism designs.</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Mechanical Design Development</h2>
-
-<p>
-The initial mechanism was designed in Onshape to quickly test the basic geometry and understand how
-the moving parts would interact. After this, I moved to Autodesk Fusion to develop the design more
-robustly using a parametric workflow.
-</p>
-
-<p>
-Using a parametric model made it easier to adjust clearances, tolerances, spring positions, and part
-dimensions as the design evolved.
-</p>
-
-<div class="image-grid">
-    <img src="../images/hit-design-1.png" alt="Initial HIT Lab mechanism design">
-    <img src="../images/hit-design-2.png" alt="Improved HIT Lab mechanism design">
-</div>
-
-<p>
-One of the key design improvements was moving toward a cylindrical form. This made the mechanism more
-ergonomic to hold and reduced the effect of gravity and orientation on the mechanism behaviour.
-</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Spring Mechanism</h2>
-
-<p>
-The spring system was a critical part of the mechanism. It controlled how the button moved, returned,
-and latched between states.
-</p>
-
-<p>
-This required testing the interaction between printed geometry, spring force, friction, and clearances.
-Small changes in tolerance had a noticeable effect on whether the mechanism moved smoothly or bound up.
-</p>
-
-<img src="../images/hit-springs.png" class="image" alt="Spring mechanism development">
-<p class="caption">Spring mechanism development and internal button behaviour.</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Prototype Iteration</h2>
-
-<p>
-The design was developed through repeated 3D printing, assembly and testing. Each version revealed
-new issues with tolerances, friction, ergonomics or printability.
-</p>
-
-<div class="card">
-<h3>Challenge: Designing for 3D Printing</h3>
-<p>
-Clearances that looked suitable in CAD did not always behave the same once printed. Layer lines,
-surface finish, friction and small dimensional errors all affected the movement of the mechanism.
-</p>
-</div>
-
-<div class="card">
-<h3>Challenge: Mechanism Feel</h3>
-<p>
-The mechanism needed to be functional, but also comfortable and intuitive to use. This meant the
-shape, travel, spring force and latching behaviour had to be considered together.
-</p>
-</div>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Unity Development</h2>
-
-<p>
-A major part of the project was learning Unity and using it to connect the physical mechanism with a
-digital mixed reality environment.
-</p>
-
-<p>
-This involved learning the Unity hierarchy, writing scripts in C#, using prefabs, importing and
-working with the Meta SDK, setting up player movement and camera behaviour, and experimenting with
-animations.
-</p>
-
-<img src="../images/hit-unity.png" class="image" alt="Unity development">
-<p class="caption">Unity work used to begin connecting the physical mechanism to a mixed reality environment.</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Mixed Reality Tracking</h2>
-
-<p>
-Once the mechanism had been designed and printed, the next stage was tracking it inside Unity.
-The goal was to create a connection between a physical object and its digital representation.
-</p>
-
-<p>
-This introduced a different set of challenges compared with mechanical design. I had to consider how
-the object would be recognised, tracked, and represented in a mixed reality environment.
-</p>
-
-<img src="../images/hit-tracking.gif" class="image" alt="Mixed reality tracking">
-<p class="caption">Tracking test for representing the physical mechanism inside Unity.</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Results & Future Development</h2>
-
-<p>
-By the end of the project, I had researched existing latching mechanisms, designed and printed my own
-mechanism, developed a more ergonomic cylindrical design, learned core Unity workflows, and begun
-integrating the physical prototype with mixed reality tracking.
-</p>
-
-<p>
-Future development would involve improving the tracking method, fixing remaining Unity-side bugs,
-and adding code that allows Unity to detect the physical state of the mechanism.
-</p>
-
-</div>
-</section>
-
-<section>
-<div class="container">
-
-<h2>Key Lessons</h2>
-
-<p>
-This project helped me develop a broader understanding of mechatronics beyond traditional robotics
-or UAV work. It required mechanical design, 3D printing, user interaction thinking, software
-development, and mixed reality integration.
-</p>
-
-<p>
-The biggest lesson was that physical-digital interaction requires both good mechanical design and
-good software integration. A mechanism can work physically, but still needs careful consideration
-before it works well as part of an interactive mixed reality system.
-</p>
-
-</div>
-</section>
-
-<footer>
-Samuel Nicholson • HIT Lab Mixed Reality Project
-</footer>
+    <footer>
+        Samuel Nicholson · HIT Lab Mixed Reality Project
+    </footer>
 
 </body>
+
 </html>
