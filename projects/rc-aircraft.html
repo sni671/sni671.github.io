@@ -1,0 +1,612 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aircraft Through the Years | Samuel Nicholson</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0b0f19;
+    color: white;
+    line-height: 1.7;
+}
+
+.container {
+    width: 88%;
+    max-width: 1120px;
+    margin: auto;
+}
+
+nav {
+    position: absolute;
+    top: 34px;
+    left: 6%;
+    right: 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.88;
+}
+
+nav a:hover {
+    opacity: 1;
+}
+
+.hero {
+    min-height: 86vh;
+
+    background:
+        linear-gradient(
+            rgba(5, 10, 20, 0.42),
+            rgba(5, 10, 20, 0.92)
+        ),
+        url("../images/planes-edge.jpeg");
+
+    background-size: cover;
+    background-position: center 42%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 760px;
+}
+
+.hero h1 {
+    font-size: 70px;
+    line-height: 1.05;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 22px;
+    color: #e1e4ea;
+    max-width: 700px;
+}
+
+.page-links {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: #101626;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.page-links .container {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+.page-links a {
+    color: #d0d5df;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.page-links a:hover {
+    color: white;
+}
+
+section {
+    padding: 80px 0;
+}
+
+section.alt {
+    background: #0e1422;
+}
+
+h2 {
+    font-size: 38px;
+    line-height: 1.2;
+    margin-bottom: 22px;
+}
+
+h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #d0d0d0;
+    margin-bottom: 17px;
+}
+
+.lead {
+    font-size: 21px;
+    color: #e0e3e8;
+}
+
+.two-column {
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 48px;
+    align-items: center;
+}
+
+.two-column.reverse {
+    grid-template-columns: 0.95fr 1.05fr;
+}
+
+.image-card {
+    background: #151b2d;
+    border-radius: 18px;
+    padding: 14px;
+}
+
+.image-card img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: contain;
+    border-radius: 12px;
+    display: block;
+}
+
+.caption {
+    color: #9299a8;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.video-wrap {
+    width: 100%;
+    max-width: 430px;
+    aspect-ratio: 9 / 16;
+    margin: 0 auto;
+}
+
+.video-wrap iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+    border-radius: 16px;
+}
+
+.reflection {
+    background:
+        linear-gradient(
+            rgba(10, 16, 28, 0.84),
+            rgba(10, 16, 28, 0.94)
+        ),
+        url("../images/planes-edge.jpeg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.reflection-box {
+    max-width: 850px;
+    background: rgba(11, 15, 25, 0.76);
+    padding: 34px;
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    background: #070a12;
+    color: #888;
+    text-align: center;
+    padding: 36px;
+}
+
+@media (max-width: 850px) {
+
+    nav {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 78vh;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 32px;
+    }
+
+    .two-column,
+    .two-column.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .image-card {
+        order: 2;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Samuel Nicholson</div>
+    <a href="../index.html">Home</a>
+</nav>
+
+
+<header class="hero">
+
+    <div class="container">
+
+        <div class="hero-content">
+
+            <h1>Aircraft Through the Years</h1>
+
+            <p>
+                Building, flying, crashing, repairing and improving aircraft
+                since I was 11 years old.
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<div class="page-links">
+
+    <div class="container">
+
+        <a href="#beginning">Where It Started</a>
+        <a href="#first-build">First Build</a>
+        <a href="#mustang">Mustang</a>
+        <a href="#edge">Edge</a>
+        <a href="#printed">3D-Printed Aircraft</a>
+        <a href="#reflection">Reflection</a>
+
+    </div>
+
+</div>
+
+
+<section id="beginning">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>Where It Started</h2>
+
+        <p class="lead">
+            Every engineering project has a starting point. Mine began at
+            11 years old with a second-hand RC aircraft and a fascination
+            with anything that could fly.
+        </p>
+
+        <p>
+            Receiving my first aircraft was the beginning of a long-term
+            interest in aviation. Learning to fly involved plenty of crashes,
+            repairs and rebuilding, but it also introduced me to the basics
+            of aircraft control, centre of gravity and practical maintenance.
+        </p>
+
+        <p>
+            More importantly, it made me want to understand how aircraft were
+            built rather than simply learning how to operate them.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/planes-cub.jpeg"
+            alt="Samuel Nicholson receiving his first RC aircraft at age 11">
+
+        <p class="caption">
+            Age 11 with my first RC aircraft, a second-hand foamboard Cub.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="first-build" class="alt">
+
+<div class="container">
+
+<div class="two-column reverse">
+
+    <div class="image-card">
+
+        <img
+            src="../images/planes-explorer.jpeg"
+            alt="Samuel Nicholson holding his first scratch-built foamboard aircraft">
+
+        <p class="caption">
+            Age 12 with the first RC aircraft I built myself.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h2>My First Scratch Build</h2>
+
+        <p>
+            Not long after learning to fly, I built my first aircraft from
+            foamboard. This changed the hobby from something I participated
+            in into something I could design, construct and modify myself.
+        </p>
+
+        <p>
+            The build introduced me to practical aircraft construction,
+            control-surface installation, motor and servo mounting, wiring,
+            weight distribution and centre-of-gravity placement.
+        </p>
+
+        <p>
+            It also taught me that even simple aircraft require careful
+            decisions. Small changes to weight, stiffness or control throw
+            could significantly change how the aircraft behaved in the air.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="mustang">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>Building More Ambitious Aircraft</h2>
+
+        <p>
+            As my confidence improved, I began building aircraft with more
+            demanding shapes and flight characteristics.
+        </p>
+
+        <p>
+            The Mustang was a step toward more scale-inspired foamboard
+            aircraft. Compared with my earlier builds, it required cleaner
+            construction, better alignment and more careful attention to
+            weight and balance.
+        </p>
+
+        <p>
+            Each new aircraft became an opportunity to improve construction
+            quality and understand why different layouts produced different
+            handling characteristics.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/planes-mustang.png"
+            alt="Scratch-built foamboard Mustang RC aircraft">
+
+        <p class="caption">
+            Foamboard Mustang built as I progressed toward more complex and
+            scale-inspired aircraft.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="edge" class="alt">
+
+<div class="container">
+
+<h2>Edge Aerobatic Aircraft</h2>
+
+<p class="lead">
+The Edge is my most recent foamboard aircraft and represents how far my
+building and flying skills have progressed from the early projects.
+</p>
+
+<div class="two-column">
+
+    <div>
+
+        <p>
+            The aircraft was built for responsive aerobatic flight and has
+            considerably greater control authority than my earlier foamboard
+            aircraft.
+        </p>
+
+        <p>
+            Flying it required more confidence and precision, especially when
+            performing manoeuvres such as rolls and recovering from unusual
+            attitudes.
+        </p>
+
+        <p>
+            The Edge has been one of the most enjoyable aircraft I have built
+            because it combines the satisfaction of constructing the airframe
+            with the challenge of learning to fly it well.
+        </p>
+
+        <div class="image-card">
+
+            <img
+                src="../images/planes-edge.jpeg"
+                alt="Scratch-built foamboard Edge aerobatic aircraft">
+
+            <p class="caption">
+                My latest foamboard build: an aerobatic Edge aircraft.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="video-wrap">
+
+        <iframe
+            src="https://www.youtube.com/embed/iGGJU5VrtuI"
+            title="Foamboard Edge RC aircraft flight"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="printed">
+
+<div class="container">
+
+<div class="two-column reverse">
+
+    <div class="image-card">
+
+        <img
+            src="../images/planes-3dprinted.png"
+            alt="Early 3D-printed RC aircraft experiment">
+
+        <p class="caption">
+            An early attempt at a fully 3D-printed aircraft.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h2>Early 3D-Printed Aircraft Experiment</h2>
+
+        <p>
+            Wanting to experiment with additive manufacturing, I attempted to
+            build an entirely 3D-printed aircraft.
+        </p>
+
+        <p>
+            The aircraft never achieved successful flight. At the time, I had
+            limited experience designing lightweight printed structures, and
+            the printer available to me could not produce the thin, consistent
+            parts required for an efficient airframe.
+        </p>
+
+        <p>
+            The result was simply too heavy for its available wing area and
+            propulsion system.
+        </p>
+
+        <p>
+            Although unsuccessful, the project became a valuable early lesson
+            in the limitations of FDM printing, weight management and
+            stiffness-to-weight ratio. These lessons later influenced the
+            structural approach used in my VTOL UAV, where custom internal
+            reinforcement and print orientation became major design
+            considerations.
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="reflection" class="reflection">
+
+<div class="container">
+
+<div class="reflection-box">
+
+    <h2>Why This Matters to Me</h2>
+
+    <p class="lead">
+        These aircraft were much simpler than my current UAV projects, but
+        they established the practical understanding I now rely on when
+        designing more advanced systems.
+    </p>
+
+    <p>
+        They taught me that aircraft development is iterative, crashes are
+        valuable feedback, and a design only becomes meaningful once it has
+        been built and flown.
+    </p>
+
+    <p>
+        More than anything, they show that my interest in aviation did not
+        begin with a university project. It has been something I have pursued
+        for as long as I can remember, and it continues to shape the
+        engineering work I choose to take on.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+Samuel Nicholson • Aircraft Through the Years
+</footer>
+
+</body>
+
+</html>
+```
