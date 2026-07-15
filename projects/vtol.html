@@ -423,10 +423,6 @@ footer {
             Overview
         </a>
 
-        <a href="#autonomy">
-            Autonomous Flight
-        </a>
-
         <a href="#cad">
             CAD Design
         </a>
@@ -437,6 +433,10 @@ footer {
 
         <a href="#aerodynamics">
             Aerodynamics
+        </a>
+
+        <a href="#autonomy">
+            Autonomous Flight
         </a>
 
         <a href="#electronics">
@@ -1051,6 +1051,83 @@ change could significantly improve low-speed handling.
 
 </section>
 
+<!-- AUTONOMOUS FLIGHT -->
+
+<section id="autonomy">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>
+            Autonomous Flight
+        </h2>
+
+        <p class="lead">
+            While achieving stable VTOL flight has been the primary focus of
+            this project, the long-term objective is to develop a fully
+            autonomous aircraft capable of completing useful real-world
+            missions.
+        </p>
+
+        <p>
+            Combining vertical take-off and landing with efficient fixed-wing
+            flight allows the aircraft to operate from locations where
+            conventional runways are unavailable while still providing the
+            endurance and range of a traditional UAV.
+        </p>
+
+        <p>
+            The aircraft uses a Corewing F405 flight controller running INAV,
+            supporting GPS navigation, waypoint missions, return-to-home and
+            fully autonomous flight modes. Position is provided by a Foxeer
+            M10Q GPS and IST8310 compass, while a MATEK ASPD-4525 digital
+            pitot tube provides accurate airspeed measurements during forward
+            flight.
+        </p>
+
+        <p>
+            Rather than enabling autonomous flight immediately, the project is
+            being developed incrementally. Stable hover, reliable fixed-wing
+            flight and repeatable transitions must all be achieved before
+            autonomous waypoint missions can be introduced safely.
+        </p>
+
+    </div>
+
+    <div>
+
+        <img
+            src="../images/vtol-inav.jpg"
+            class="image"
+            alt="INAV waypoint mission planning">
+
+        <p class="caption">
+            Example waypoint mission created using INAV Mission Control.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="callout">
+
+<strong>
+Development Path
+</strong>
+
+<p>
+Stable hover → Forward flight → Reliable transitions →
+GPS-assisted flight → Autonomous waypoint missions.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 <!-- ELECTRONICS -->
 
