@@ -20,7 +20,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #0b0f19;
     color: white;
     line-height: 1.75;
@@ -32,14 +32,19 @@ body {
     margin: auto;
 }
 
+
+/* TOP NAVIGATION */
+
 nav {
     position: absolute;
     top: 35px;
     left: 6%;
     right: 6%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     z-index: 10;
 }
 
@@ -51,13 +56,15 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
     transition: opacity 0.2s;
 }
 
 nav a:hover {
     opacity: 0.7;
 }
+
+
+/* HERO */
 
 .hero {
     min-height: 88vh;
@@ -89,18 +96,22 @@ nav a:hover {
 .hero p {
     font-size: 22px;
     color: #d8d8d8;
-    max-width: 760px;
+    max-width: 770px;
 }
 
 .button {
     display: inline-block;
+
     margin-top: 30px;
     padding: 14px 26px;
+
     background: white;
     color: black;
+
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
+
     transition: transform 0.2s;
 }
 
@@ -108,9 +119,13 @@ nav a:hover {
     transform: translateY(-3px);
 }
 
+
+/* STICKY SECTION NAVIGATION */
+
 .page-links {
     background: #101626;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
     position: sticky;
     top: 0;
     z-index: 20;
@@ -119,7 +134,9 @@ nav a:hover {
 .page-links .container {
     display: flex;
     gap: 24px;
+
     overflow-x: auto;
+
     padding-top: 18px;
     padding-bottom: 18px;
 }
@@ -135,11 +152,18 @@ nav a:hover {
     color: white;
 }
 
+.home-link {
+    font-weight: bold;
+}
+
+
+/* GENERAL CONTENT */
+
 section {
     padding: 85px 0;
 }
 
-section:nth-of-type(even) {
+section.alt {
     background: #0e1422;
 }
 
@@ -178,6 +202,9 @@ li {
     color: #e1e1e1;
 }
 
+
+/* IMAGES */
+
 .image {
     width: 100%;
     border-radius: 16px;
@@ -196,6 +223,7 @@ li {
     width: 100%;
     height: 100%;
     max-height: 520px;
+
     object-fit: cover;
     border-radius: 16px;
     display: block;
@@ -207,6 +235,9 @@ li {
     margin-top: 10px;
     margin-bottom: 30px;
 }
+
+
+/* SPECIFICATION CARDS */
 
 .spec-grid {
     display: grid;
@@ -226,9 +257,13 @@ li {
     margin-bottom: 7px;
 }
 
+
+/* CHALLENGE CARDS */
+
 .challenge {
     background: #151b2d;
     border-left: 4px solid #8ab4ff;
+
     padding: 30px;
     border-radius: 14px;
     margin-top: 28px;
@@ -238,12 +273,18 @@ li {
     margin-top: 0;
 }
 
+
+/* TWO-COLUMN SECTIONS */
+
 .two-column {
     display: grid;
     grid-template-columns: 1.1fr 0.9fr;
     gap: 45px;
     align-items: center;
 }
+
+
+/* VIDEO */
 
 .video-wrap {
     width: 100%;
@@ -259,13 +300,25 @@ li {
     border-radius: 16px;
 }
 
+
+/* CALLOUT */
+
 .callout {
     margin-top: 28px;
+
     background: rgba(138, 180, 255, 0.09);
     border: 1px solid rgba(138, 180, 255, 0.25);
+
     padding: 26px;
     border-radius: 14px;
 }
+
+.callout p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* FOOTER */
 
 footer {
     padding: 38px;
@@ -273,6 +326,9 @@ footer {
     background: #070a12;
     color: #888;
 }
+
+
+/* MOBILE */
 
 @media (max-width: 850px) {
 
@@ -305,17 +361,26 @@ footer {
 </style>
 </head>
 
+
 <body>
 
-<nav>
-    <div class="logo">Samuel Nicholson</div>
 
-    <div>
-        <a href="../index.html">Home</a>
-        <a href="../index.html#projects">Projects</a>
+<!-- TOP NAVIGATION -->
+
+<nav>
+
+    <div class="logo">
+        Samuel Nicholson
     </div>
+
+    <a href="../index.html">
+        Home
+    </a>
+
 </nav>
 
+
+<!-- HERO -->
 
 <header class="hero">
 
@@ -323,12 +388,14 @@ footer {
 
         <div class="hero-content">
 
-            <h1>VTOL UAV</h1>
+            <h1>
+                VTOL UAV
+            </h1>
 
             <p>
-                Designing, manufacturing and flight testing a 3D printed
-                transition-capable UAV combining vertical takeoff with
-                efficient fixed-wing flight.
+                Designing, manufacturing and flight testing a 3D-printed
+                transition-capable UAV, with the long-term goal of creating
+                an efficient and fully autonomous aircraft platform.
             </p>
 
             <a href="#flight-video" class="button">
@@ -342,35 +409,75 @@ footer {
 </header>
 
 
+<!-- STICKY NAVIGATION -->
+
 <div class="page-links">
 
     <div class="container">
 
-        <a href="#overview">Overview</a>
-        <a href="#cad">CAD Design</a>
-        <a href="#structure">Structure</a>
-        <a href="#aerodynamics">Aerodynamics</a>
-        <a href="#electronics">Electronics</a>
-        <a href="#challenges">Challenges</a>
-        <a href="#vertical-flight">Vertical Flight</a>
-        <a href="#transition">Transition</a>
-        <a href="#forward-flight">Forward Flight</a>
+        <a href="../index.html" class="home-link">
+            ← Home
+        </a>
+
+        <a href="#overview">
+            Overview
+        </a>
+
+        <a href="#autonomy">
+            Autonomous Flight
+        </a>
+
+        <a href="#cad">
+            CAD Design
+        </a>
+
+        <a href="#structure">
+            Structure
+        </a>
+
+        <a href="#aerodynamics">
+            Aerodynamics
+        </a>
+
+        <a href="#electronics">
+            Electronics
+        </a>
+
+        <a href="#challenges">
+            Challenges
+        </a>
+
+        <a href="#vertical-flight">
+            Vertical Flight
+        </a>
+
+        <a href="#transition">
+            Transition
+        </a>
+
+        <a href="#forward-flight">
+            Forward Flight
+        </a>
 
     </div>
 
 </div>
 
 
+<!-- OVERVIEW -->
+
 <section id="overview">
 
 <div class="container">
 
-<h2>Project Overview</h2>
+<h2>
+    Project Overview
+</h2>
 
 <p class="lead">
 This project began as an exploration into one of the most challenging
 problems in small unmanned aircraft design: combining vertical takeoff
-and landing capability with the efficiency of fixed-wing flight.
+and landing capability with the efficiency and range of fixed-wing flight.
 </p>
 
 <p>
@@ -391,6 +498,13 @@ transition development and fixed-wing flight testing.
 </p>
 
 <p>
+The long-term objective is to develop the aircraft into a capable
+autonomous platform. Vertical takeoff removes the requirement for a
+runway or launch system, while fixed-wing operation provides the
+efficiency needed for useful range and endurance.
+</p>
+
+<p>
 A major focus throughout the project has been iteration. Several design
 decisions that initially appeared successful in CAD or during static
 testing exposed weaknesses during real flight testing. Each issue
@@ -406,7 +520,7 @@ required investigation, redesign and further validation.
 
     <div class="spec">
         <strong>Construction</strong>
-        Custom 3D printed PLA airframe with carbon fibre reinforcement
+        Custom 3D-printed PLA airframe with carbon-fibre reinforcement
     </div>
 
     <div class="spec">
@@ -415,8 +529,8 @@ required investigation, redesign and further validation.
     </div>
 
     <div class="spec">
-        <strong>Primary Objective</strong>
-        Reliable vertical, transition and fixed-wing flight
+        <strong>Long-Term Goal</strong>
+        Autonomous VTOL navigation and mission capability
     </div>
 
 </div>
@@ -426,7 +540,9 @@ required investigation, redesign and further validation.
 </section>
 
 
-<section id="flight-video">
+<!-- FLIGHT VIDEO -->
+
+<section id="flight-video" class="alt">
 
 <div class="container">
 
@@ -434,7 +550,9 @@ required investigation, redesign and further validation.
 
     <div>
 
-        <h2>Flight Testing</h2>
+        <h2>
+            Flight Testing
+        </h2>
 
         <p>
             This video shows an early vertical flight test of the aircraft.
@@ -448,6 +566,12 @@ required investigation, redesign and further validation.
             more easily. Stable vertical flight was developed first,
             followed by fixed-wing testing, before combining both operating
             modes during transition development.
+        </p>
+
+        <p>
+            This staged approach is also important for future autonomous
+            operation. Each flight mode must be independently reliable before
+            it can be safely integrated into a complete automated mission.
         </p>
 
     </div>
@@ -469,11 +593,107 @@ required investigation, redesign and further validation.
 </section>
 
 
-<section id="cad">
+<!-- AUTONOMOUS FLIGHT -->
+
+<section id="autonomy">
 
 <div class="container">
 
-<h2>CAD Design</h2>
+<div class="two-column">
+
+    <div>
+
+        <h2>
+            Autonomous Flight
+        </h2>
+
+        <p class="lead">
+            The end goal of the project is not only to create an aircraft
+            capable of vertical and fixed-wing flight, but to develop a
+            platform capable of completing useful autonomous missions.
+        </p>
+
+        <p>
+            An autonomous VTOL aircraft combines the deployment flexibility
+            of a multicopter with the range and endurance of a fixed-wing UAV.
+            This makes the configuration suitable for applications where
+            conventional launch and landing infrastructure is unavailable.
+        </p>
+
+        <p>
+            Potential applications include environmental monitoring,
+            surveying, search and rescue, agricultural observation,
+            infrastructure inspection and the delivery of lightweight
+            payloads.
+        </p>
+
+        <p>
+            The Corewing F405 flight controller runs INAV, providing support
+            for GPS navigation, waypoint missions, altitude control, return
+            to home, position hold and fixed-wing flight modes.
+        </p>
+
+        <p>
+            The Foxeer GPS and compass provide position and heading data,
+            while the digital pitot system measures airspeed. Airspeed
+            information is especially important during autonomous transition
+            and fixed-wing flight because it allows the control system to
+            maintain appropriate stall margins regardless of wind speed.
+        </p>
+
+        <p>
+            Developing autonomy is being approached in the same staged manner
+            as the aircraft itself. Manual vertical and fixed-wing flight must
+            first be reliable, followed by stable transitions, before more
+            advanced waypoint and mission behaviour can be introduced.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/vtol-inav.png"
+            class="image"
+            alt="Example INAV waypoint mission setup">
+
+        <p class="caption">
+            Example INAV waypoint mission configuration. A generic location
+            is shown rather than one of my actual flight locations.
+        </p>
+
+    </div>
+
+</div>
+
+<div class="callout">
+
+    <strong>
+        Autonomous development pathway
+    </strong>
+
+    <p>
+        Reliable manual flight → stable vertical flight → reliable forward
+        flight → controlled transitions → GPS-assisted modes → autonomous
+        waypoint missions.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CAD DESIGN -->
+
+<section id="cad" class="alt">
+
+<div class="container">
+
+<h2>
+    CAD Design
+</h2>
 
 <p>
 The aircraft was designed entirely in <strong>SolidWorks</strong>,
@@ -498,13 +718,6 @@ before it was integrated with solid-modelled internal structures,
 mounting features and modular interfaces.
 </p>
 
-<p>
-The design also made use of <strong>multi-body modelling</strong> and
-parametric techniques. These made it much easier to update connected
-parts when dimensions, component positions or aerodynamic geometry
-changed throughout development.
-</p>
-
 <div class="image-grid">
 
     <img
@@ -513,7 +726,7 @@ changed throughout development.
 
     <img
         src="../images/vtol-CAD-transparent2.jpg"
-        alt="Transparent CAD render showing the VTOL internal layout">
+        alt="Transparent CAD render of the VTOL UAV">
 
 </div>
 
@@ -523,7 +736,9 @@ layout and internal component packaging.
 </p>
 
 
-<h3>Modular Design</h3>
+<h3>
+    Modular Design
+</h3>
 
 <p>
 A major design requirement from the beginning of the project was
@@ -550,7 +765,7 @@ can be independently removed and replaced:
     <li>Tail assembly</li>
     <li>Nose section</li>
     <li>Rear motor mount</li>
-    <li>Battery and electronics hatches</li>
+    <li>Electronics hatches</li>
 </ul>
 
 <p>
@@ -576,11 +791,15 @@ designed for transport, repair and rapid design iteration.
 </section>
 
 
+<!-- STRUCTURAL DESIGN -->
+
 <section id="structure">
 
 <div class="container">
 
-<h2>Structural Design & Additive Manufacturing</h2>
+<h2>
+    Structural Design & Additive Manufacturing
+</h2>
 
 <p>
 One of the largest engineering challenges throughout the project was
@@ -607,7 +826,7 @@ using conventional PLA and careful engineering design.
 
 <p>
 Unlike conventional engineering materials,
-<strong>FDM printed parts are inherently anisotropic</strong>, meaning
+<strong>FDM-printed parts are inherently anisotropic</strong>, meaning
 their strength depends heavily on print orientation. This made print
 orientation a design parameter that had to be considered alongside the
 geometry of every component.
@@ -629,18 +848,22 @@ be reinforced while unnecessary material was removed elsewhere.
 
 <div class="callout">
 
-    <strong>Structural design objective</strong>
+    <strong>
+        Structural design objective
+    </strong>
 
     <p>
         The aim was to make the printed parts behave as engineered
-        structural components rather than simply solid plastic shells
-        filled with generic infill.
+        structural components rather than simply plastic shells filled
+        with generic infill.
     </p>
 
 </div>
 
 
-<h3>Fuselage Structure</h3>
+<h3>
+    Fuselage Structure
+</h3>
 
 <p>
 The fuselage was designed around a continuous
@@ -654,12 +877,6 @@ ribs were designed specifically around the expected loading conditions.
 The helical arrangement increases both bending stiffness and torsional
 rigidity while using substantially less material than a solid or
 high-infill structure.
-</p>
-
-<p>
-The structure also helps transfer loads between the wing attachment,
-battery compartment, nose and tail while maintaining open internal
-space for electronics and wiring.
 </p>
 
 <img
@@ -679,48 +896,63 @@ become one of the weakest regions of the body.
 </p>
 
 <p>
-To reinforce the connection, <strong>1.2 mm steel locating pins</strong>
-were incorporated across the joint. These pins help maintain alignment
-and transfer bending loads between the fuselage sections, preventing
-the modular interface from becoming the weakest part of the structure.
+To reinforce the connection,
+<strong>1.2 mm diameter steel locating pins</strong> were incorporated
+across the joint. These pins help maintain alignment and transfer
+bending loads between the fuselage sections, preventing the modular
+interface from becoming the weakest part of the structure.
 </p>
 
 
-<h3>Wing Structure</h3>
+<h3>
+    Wing Spar
+</h3>
 
 <p>
-The wings introduced a different structural problem. Due to the
-available printer size, each wing had to be manufactured as
-<strong>four printed sections</strong>, including the aileron assembly.
+The wings are reinforced using
+<strong>one 10 × 8 × 500 mm carbon-fibre spar per wing</strong>.
+</p>
+
+<p>
+The spars carry the majority of the wing bending loads while allowing
+the printed wing shells and internal ribs to remain lightweight. Carbon
+fibre was selected because it provides high bending stiffness for
+relatively low mass.
+</p>
+
+<p>
+Due to the available printer size, each wing had to be manufactured as
+multiple printed sections, including the aileron assembly.
 </p>
 
 <p>
 Following research into lightweight wing structures and truss layouts,
-the internal geometry was designed using a series of
-<strong>diagonal reinforcing ribs</strong>. This structure distributes
-aerodynamic loads through the wing while providing high stiffness for
-relatively low material usage.
+the internal printed geometry was designed using a series of
+<strong>diagonal reinforcing ribs</strong>. These ribs support the
+aerodynamic shell and transfer local loads into the carbon-fibre spar.
 </p>
 
 <p>
-The printed wing sections are aligned and reinforced using additional
-<strong>1.2 mm steel pins</strong>. These improve joint alignment and
-allow structural loads to pass more effectively between neighbouring
-sections.
+The printed wing sections are aligned using additional
+<strong>1.2 mm diameter steel locating pins</strong>. These improve
+joint alignment and prevent the separate wing sections from rotating
+relative to one another.
 </p>
 
 <img
     src="../images/vtol-wing-structure.jpg"
     class="image"
-    alt="Internal diagonal wing rib structure">
+    alt="Internal wing structure and carbon-fibre wing spar">
 
 <p class="caption">
-Internal wing structure showing diagonal reinforcement and steel pins
-used to connect the separately printed wing sections.
+Internal wing reinforcement and carbon-fibre spar arrangement used to
+provide bending stiffness while keeping the printed structure lightweight.
 </p>
 
 
-<h3>Design Iteration</h3>
+<h3>
+    Design Iteration
+</h3>
 
 <p>
 Achieving the final structure required a large number of iterations.
@@ -751,11 +983,15 @@ lesson that influenced the final aircraft.
 </section>
 
 
-<section id="aerodynamics">
+<!-- AERODYNAMICS -->
+
+<section id="aerodynamics" class="alt">
 
 <div class="container">
 
-<h2>Aerodynamics & CFD</h2>
+<h2>
+    Aerodynamics & CFD
+</h2>
 
 <p>
 Aerodynamic performance was an important design driver because it
@@ -807,8 +1043,8 @@ ailerons retain effectiveness for longer.
 
 <p>
 This experience demonstrated the importance of validating aerodynamic
-assumptions through testing and showed how even a relatively small
-geometric change could significantly improve low-speed handling.
+assumptions through testing and showed how a relatively small geometric
+change could significantly improve low-speed handling.
 </p>
 
 </div>
@@ -816,11 +1052,15 @@ geometric change could significantly improve low-speed handling.
 </section>
 
 
+<!-- ELECTRONICS -->
+
 <section id="electronics">
 
 <div class="container">
 
-<h2>Electronics & System Integration</h2>
+<h2>
+    Electronics & System Integration
+</h2>
 
 <p>
 The electronics system was developed around a
@@ -854,7 +1094,7 @@ modification.
     </div>
 
     <div class="spec">
-        <strong>Control Surface Servos</strong>
+        <strong>Control-Surface Servos</strong>
         SG90 servos
     </div>
 
@@ -864,13 +1104,13 @@ modification.
     </div>
 
     <div class="spec">
-        <strong>Navigation</strong>
-        Foxeer 250 GPS
+        <strong>GPS & Compass</strong>
+        Foxeer M10Q 250 V2 GPS with IST8310 compass
     </div>
 
     <div class="spec">
         <strong>Airspeed Measurement</strong>
-        Matek digital pitot tube
+        MATEK ASPD-4525 digital pitot-tube airspeed sensor
     </div>
 
     <div class="spec">
@@ -884,13 +1124,13 @@ modification.
     </div>
 
     <div class="spec">
-        <strong>Wing Structure</strong>
-        10 × 8 × 500 mm carbon fibre spar
+        <strong>Wing Spars</strong>
+        Two 10 × 8 × 500 mm carbon-fibre spars
     </div>
 
     <div class="spec">
         <strong>Tail Structure</strong>
-        16 × 14 × 500 mm carbon fibre boom
+        16 × 14 × 500 mm carbon-fibre boom
     </div>
 
 </div>
@@ -902,29 +1142,20 @@ that wings, motor pods and other sections can be removed without
 cutting or resoldering wires.
 </p>
 
-<!--
-Add this later when the wiring image is ready:
-
-<img
-    src="../images/vtol-wiring.jpg"
-    class="image"
-    alt="VTOL UAV electronics and wiring layout">
-
-<p class="caption">
-Electronics architecture and modular wiring layout.
-</p>
--->
-
 </div>
 
 </section>
 
 
-<section id="challenges">
+<!-- CHALLENGES -->
+
+<section id="challenges" class="alt">
 
 <div class="container">
 
-<h2>Development Challenges</h2>
+<h2>
+    Development Challenges
+</h2>
 
 <p>
 The most valuable parts of this project were often the problems that
@@ -935,7 +1166,9 @@ that were not always visible in CAD, simulation or static testing.
 
 <div class="challenge">
 
-<h3>Low-Speed Tip Stall</h3>
+<h3>
+    Low-Speed Tip Stall
+</h3>
 
 <p>
 An early version of the aircraft crashed after entering a low-speed tip
@@ -960,7 +1193,9 @@ driving an aerodynamic design change.
 
 <div class="challenge">
 
-<h3>PLA Motor Mount Deformation</h3>
+<h3>
+    PLA Motor-Mount Deformation
+</h3>
 
 <p>
 The original motor mounting plates were printed from PLA. During
@@ -982,21 +1217,14 @@ fastener loads more effectively and improve resistance to thermal
 deformation.
 </p>
 
-<!--
-Optional image:
-
-<img
-    src="../images/vtol-motor-mount.jpg"
-    class="image"
-    alt="VTOL motor mounting plate redesign">
--->
-
 </div>
 
 
 <div class="challenge">
 
-<h3>Strength Versus Weight</h3>
+<h3>
+    Strength Versus Weight
+</h3>
 
 <p>
 Increasing the strength of a printed component is relatively simple if
@@ -1005,14 +1233,14 @@ loading, reduces hover thrust margin and lowers endurance.
 </p>
 
 <p>
-This meant that structural problems could not simply be solved by using
-more walls or higher infill. Instead, material had to be placed only
-where it contributed meaningfully to load transfer, stiffness or local
+Structural problems therefore could not simply be solved by adding more
+walls or increasing infill. Material had to be placed only where it
+contributed meaningfully to load transfer, stiffness or local
 reinforcement.
 </p>
 
 <p>
-The custom internal structures, carbon fibre members, steel locating
+The custom internal structures, carbon-fibre members, steel locating
 pins and carefully selected print orientations were all developed in
 response to this challenge.
 </p>
@@ -1024,11 +1252,15 @@ response to this challenge.
 </section>
 
 
+<!-- VERTICAL FLIGHT -->
+
 <section id="vertical-flight">
 
 <div class="container">
 
-<h2>Vertical Flight</h2>
+<h2>
+    Vertical Flight
+</h2>
 
 <p>
 Vertical flight was developed first because it allowed the propulsion
@@ -1048,7 +1280,7 @@ Testing focused on:
 
 <ul>
     <li>Verifying sufficient thrust margin</li>
-    <li>Balancing the aircraft around its vertical-flight centre of gravity</li>
+    <li>Balancing the aircraft for stable hover</li>
     <li>Confirming pitch, roll and yaw control authority</li>
     <li>Tuning the INAV control response</li>
     <li>Identifying vibration and structural issues</li>
@@ -1061,25 +1293,20 @@ provided valuable information about the loads generated during
 sustained hover.
 </p>
 
-<!--
-Optional image:
-
-<img
-    src="../images/vtol-vertical-flight.jpg"
-    class="image"
-    alt="VTOL UAV during vertical flight">
--->
-
 </div>
 
 </section>
 
 
-<section id="transition">
+<!-- TRANSITION -->
+
+<section id="transition" class="alt">
 
 <div class="container">
 
-<h2>Transition Flight</h2>
+<h2>
+    Transition Flight
+</h2>
 
 <p>
 Transition is the most technically demanding phase of the project.
@@ -1122,25 +1349,27 @@ flight were first validated independently. Motor tilt and control
 mixing could then be introduced progressively.
 </p>
 
-<!--
-Optional image:
-
-<img
-    src="../images/vtol-transition.jpg"
-    class="image"
-    alt="VTOL UAV during transition flight">
--->
+<p>
+Reliable transition is also one of the key requirements for future
+autonomous missions. An autonomous aircraft must be capable of
+performing takeoff, transition, cruise, return, reverse transition and
+landing without pilot intervention.
+</p>
 
 </div>
 
 </section>
 
 
+<!-- FORWARD FLIGHT -->
+
 <section id="forward-flight">
 
 <div class="container">
 
-<h2>Forward Flight</h2>
+<h2>
+    Forward Flight
+</h2>
 
 <p>
 Once transitioned, the aircraft behaves more like a conventional
@@ -1160,7 +1389,7 @@ Fixed-wing testing focused on:
 
 <ul>
     <li>Static and dynamic stability</li>
-    <li>Centre of gravity placement</li>
+    <li>Centre-of-gravity placement</li>
     <li>Control-surface effectiveness</li>
     <li>Stall behaviour</li>
     <li>Cruise performance</li>
@@ -1175,25 +1404,27 @@ predictable handling and sufficient control authority throughout its
 operating envelope.
 </p>
 
-<!--
-Optional image:
-
-<img
-    src="../images/vtol-forward-flight.jpg"
-    class="image"
-    alt="VTOL UAV during forward flight">
--->
+<p>
+Efficient and stable forward flight is essential to the autonomous goal
+of the project. Once the aircraft can reliably cruise under flight
+controller control, it can begin completing longer waypoint missions
+while using far less energy than would be required to remain in hover.
+</p>
 
 </div>
 
 </section>
 
 
-<section>
+<!-- LESSONS -->
+
+<section class="alt">
 
 <div class="container">
 
-<h2>Key Lessons</h2>
+<h2>
+    Key Lessons
+</h2>
 
 <p>
 The most important lesson from this project has been that aircraft
@@ -1216,11 +1447,17 @@ practical flight testing.
 </p>
 
 <p>
-More importantly, it taught me to treat failures as engineering
-information. The tip-stall crash, deformed motor mounts and large
-number of discarded printed parts were not simply setbacks. Each one
-identified a weakness, informed a redesign and resulted in a more
-capable aircraft.
+It has also shown me that autonomy depends on reliable physical systems.
+Waypoint navigation and automated flight modes are only useful once the
+aircraft structure, propulsion, sensors and control behaviour have been
+validated through real testing.
+</p>
+
+<p>
+More importantly, the project taught me to treat failures as engineering
+information. The tip-stall crash, deformed motor mounts and large number
+of discarded printed parts were not simply setbacks. Each one identified
+a weakness, informed a redesign and resulted in a more capable aircraft.
 </p>
 
 </div>
@@ -1229,10 +1466,10 @@ capable aircraft.
 
 
 <footer>
-Samuel Nicholson • VTOL UAV Development Project
+    Samuel Nicholson • VTOL UAV Development Project
 </footer>
+
 
 </body>
 
 </html>
-```
