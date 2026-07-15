@@ -488,3 +488,429 @@ faster and more reliable robot.
 </div>
 
 </section>
+
+<section id="electronics" class="alt">
+
+<div class="container">
+
+<div class="two-column reverse">
+
+    <div class="image-card">
+
+        <img
+            src="../images/lfr-pcb.png"
+            alt="Custom PCB">
+
+        <p class="caption">
+            Main controller PCB and sensor board designed by our team in
+            KiCad.
+        </p>
+
+    </div>
+
+    <div>
+
+        <h2>
+            Electronics
+        </h2>
+
+        <p class="lead">
+            Rather than using an Arduino or other development board, we
+            designed the robot around a custom PCB.
+        </p>
+
+        <p>
+            The electronics were designed as a team using
+            <strong>KiCad</strong>, giving us complete control over the
+            system layout while providing valuable experience in schematic
+            capture, PCB layout and hardware debugging.
+        </p>
+
+        <p>
+            The robot uses an ATmega328P microcontroller mounted on the main
+            PCB, together with the motor driver circuitry, power regulation,
+            programming header and debugging LEDs. A separate PCB houses the
+            five reflective sensors used to detect the position of the line.
+        </p>
+
+        <p>
+            Separating the sensor board from the controller made it much
+            easier to experiment with sensor placement throughout the design
+            iterations without redesigning the main electronics.
+        </p>
+
+        <ul>
+
+            <li>ATmega328P Microcontroller</li>
+
+            <li>Custom KiCad PCB</li>
+
+            <li>Separate five-sensor PCB</li>
+
+            <li>PWM motor control</li>
+
+            <li>Programming and debugging headers</li>
+
+        </ul>
+
+    </div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="mechanical">
+
+<div class="container">
+
+<h2>
+    Mechanical Design
+</h2>
+
+<p class="lead">
+The robot progressed through three major iterations, with each version
+addressing the shortcomings discovered during physical testing.
+</p>
+
+<div class="timeline">
+
+<div class="timeline-item">
+
+<div class="two-column">
+
+<div>
+
+<h3>
+Mark 1
+</h3>
+
+<p>
+The first prototype used a laser-cut wooden chassis together with
+3D-printed gears, wheels and motor mounts. This version allowed the
+electronics and software to be tested quickly but exposed several
+mechanical issues.
+</p>
+
+<p>
+The sensors were positioned too far ahead of the rear axle, causing a
+delay between detecting the line and steering corrections. The original
+gear ratio also produced insufficient torque, causing the motors to
+stall under load.
+</p>
+
+</div>
+
+<div class="image-card">
+
+<img
+src="../images/lfr-mk1.png"
+alt="Mark 1">
+
+<p class="caption">
+The first working prototype used for initial testing.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="two-column reverse">
+
+<div class="image-card">
+
+<img
+src="../images/lfr-mk2.png"
+alt="Mark 2">
+
+<p class="caption">
+Second iteration with improved layout and sensor positioning.
+</p>
+
+</div>
+
+<div>
+
+<h3>
+Mark 2
+</h3>
+
+<p>
+The second version retained much of the original hardware but shortened
+the chassis and repositioned the sensor board closer to the axle. This
+produced noticeably better cornering performance and faster response to
+changes in the line.
+</p>
+
+<p>
+Although handling improved, the drivetrain still lacked sufficient
+torque and the chassis remained wider than desired. These observations
+led to a complete redesign of the robot.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="timeline-item">
+
+<div class="two-column">
+
+<div>
+
+<h3>
+Final Design
+</h3>
+
+<p>
+The final robot was redesigned from the ground up to reduce weight,
+improve manoeuvrability and eliminate the drivetrain issues discovered
+during testing.
+</p>
+
+<p>
+A third gear was introduced between each motor and wheel, increasing
+the theoretical drivetrain torque by approximately
+<strong>4.4×</strong>. The wooden base was replaced with a fully
+3D-printed chassis incorporating integrated mounting points for the PCB,
+battery and motors.
+</p>
+
+<p>
+The narrower wheelbase and improved weight distribution produced a much
+more responsive robot, while the revised drivetrain eliminated the motor
+stalling experienced in earlier versions.
+</p>
+
+</div>
+
+<div class="image-card">
+
+<img
+src="../images/lfr-final-cad.png"
+alt="Final CAD">
+
+<p class="caption">
+Final CAD model of the completed robot.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="software" class="alt">
+
+<div class="container">
+
+<div class="two-column">
+
+<div>
+
+<h2>
+Embedded Software
+</h2>
+
+<p class="lead">
+The robot was programmed in Embedded C using a simple but highly
+effective Bang-Bang controller.
+</p>
+
+<p>
+Five analogue sensor readings were continuously monitored to determine
+the robot's position relative to the line. PWM outputs controlled the
+speed of the left and right motors, allowing the robot to steer by
+varying the speed difference between each wheel.
+</p>
+
+<p>
+Considerable time was spent tuning sensor thresholds, PWM values and
+overall behaviour to maximise speed while maintaining reliability.
+Throughout development, software changes were always validated through
+real-world testing rather than simulation alone.
+</p>
+
+</div>
+
+<div class="image-card">
+
+<img
+src="../images/lfr-final.png"
+alt="Final Robot">
+
+<p class="caption">
+Final assembled robot following mechanical and software optimisation.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="results">
+
+<div class="container">
+
+<h2>
+    Results
+</h2>
+
+<p class="lead">
+Following the complete mechanical redesign and software tuning, the
+robot successfully met all of the project's performance requirements.
+</p>
+
+<p>
+Compared with the original prototype, the final robot was lighter,
+more manoeuvrable and significantly more reliable. The improved
+drivetrain eliminated the motor stalling issues experienced during
+early testing, while the revised sensor placement allowed the control
+algorithm to respond much more effectively through corners.
+</p>
+
+<div class="results-grid">
+
+    <div class="result">
+
+        <span class="number">
+            315.5 g
+        </span>
+
+        Final Weight
+
+    </div>
+
+    <div class="result">
+
+        <span class="number">
+            4.4×
+        </span>
+
+        Drivetrain Torque Increase
+
+    </div>
+
+    <div class="result">
+
+        <span class="number">
+            &lt;30 s
+        </span>
+
+        Course Time
+
+    </div>
+
+    <div class="result">
+
+        <span class="number">
+            &gt;90%
+        </span>
+
+        Completion Rate
+
+    </div>
+
+</div>
+
+<p style="margin-top:30px;">
+Rather than relying on software alone, the project's success came from
+continually improving every part of the system. Mechanical design,
+electronics and embedded software were developed together, resulting in
+a robot that was substantially more capable than the initial prototype.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="lessons" class="alt">
+
+<div class="container">
+
+<div class="two-column">
+
+<div>
+
+<h2>
+    Key Lessons
+</h2>
+
+<p class="lead">
+This project demonstrated the importance of treating a mechatronic
+system as a whole rather than optimising each subsystem independently.
+</p>
+
+<p>
+The largest improvements were achieved through mechanical redesign
+rather than increasingly complex software. Better sensor placement,
+improved gearing and a lighter chassis all made the control algorithm
+significantly easier to tune.
+</p>
+
+<p>
+Working as part of a team also provided valuable experience in
+collaborative engineering. Throughout the project we jointly designed
+the electronics in KiCad, manufactured custom PCBs, assembled the
+robot, tested each iteration and used the results to guide future
+design decisions.
+</p>
+
+<p>
+Overall this project strengthened my experience in mechanical design,
+3D printing, PCB development, embedded programming, hardware
+debugging and iterative engineering design. It also reinforced an
+approach that I continue to use throughout my UAV projects—build
+early, test often and let experimental results drive the next design
+iteration.
+</p>
+
+</div>
+
+<div class="image-card">
+
+<img
+    src="../images/lfr-final.png"
+    alt="Completed robot">
+
+<p class="caption">
+The completed robot represented the culmination of multiple design
+iterations, combining custom electronics, embedded software and
+mechanical redesign into a reliable autonomous system.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    © 2026 Samuel Nicholson • Line Following Robot Project
+
+</footer>
+
+</body>
+
+</html>
