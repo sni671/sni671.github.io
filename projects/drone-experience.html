@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,7 +20,7 @@ html {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background: #0b0f19;
     color: white;
     line-height: 1.7;
@@ -33,14 +32,19 @@ body {
     margin: auto;
 }
 
+
+/* HERO */
+
 nav {
     position: absolute;
     top: 34px;
     left: 6%;
     right: 6%;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     z-index: 10;
 }
 
@@ -52,7 +56,6 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    margin-left: 25px;
     opacity: 0.88;
 }
 
@@ -66,18 +69,19 @@ nav a:hover {
     background:
         linear-gradient(
             rgba(5, 10, 20, 0.30),
-            rgba(5, 10, 20, 0.88)
+            rgba(5, 10, 20, 0.90)
         ),
         url("../images/flight-me.png");
 
     background-size: cover;
     background-position: center;
+
     display: flex;
     align-items: center;
 }
 
 .hero-content {
-    max-width: 750px;
+    max-width: 760px;
 }
 
 .hero h1 {
@@ -92,34 +96,24 @@ nav a:hover {
     color: #e0e3e8;
 }
 
-.button {
-    display: inline-block;
-    margin-top: 28px;
-    padding: 14px 26px;
-    background: white;
-    color: #0b0f19;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-    transition: transform 0.2s;
-}
 
-.button:hover {
-    transform: translateY(-3px);
-}
+/* STICKY PAGE NAVIGATION */
 
 .page-links {
     position: sticky;
     top: 0;
     z-index: 20;
+
     background: #101626;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .page-links .container {
     display: flex;
     gap: 24px;
+
     overflow-x: auto;
+
     padding-top: 17px;
     padding-bottom: 17px;
 }
@@ -134,6 +128,13 @@ nav a:hover {
 .page-links a:hover {
     color: white;
 }
+
+.home-link {
+    font-weight: bold;
+}
+
+
+/* GENERAL SECTIONS */
 
 section {
     padding: 78px 0;
@@ -179,6 +180,9 @@ strong {
     grid-template-columns: 0.95fr 1.05fr;
 }
 
+
+/* IMAGES */
+
 .image-card {
     background: #151b2d;
     border-radius: 18px;
@@ -197,35 +201,64 @@ strong {
     color: #9299a8;
     font-size: 14px;
     margin-top: 10px;
+    margin-bottom: 0;
 }
 
-.drone-grid {
+
+/* PROJECT SPECIFICATIONS */
+
+.spec-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 17px;
+    margin-top: 25px;
+}
+
+.spec {
+    background: #151b2d;
+    padding: 20px;
+    border-radius: 14px;
+    color: #d5d9e1;
+}
+
+.spec strong {
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+/* QUADCOPTER CARDS */
+
+.quad-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 25px;
     margin-top: 28px;
 }
 
-.drone-card {
+.quad-card {
     background: #151b2d;
     border-radius: 18px;
     overflow: hidden;
 }
 
-.drone-card img {
+.quad-card img {
     width: 100%;
     height: 300px;
     object-fit: cover;
     display: block;
 }
 
-.drone-content {
+.quad-content {
     padding: 24px;
 }
 
-.drone-content h3 {
+.quad-content h3 {
     margin-bottom: 10px;
 }
+
+
+/* SKILLS AND MAINTENANCE */
 
 .skills-grid {
     display: grid;
@@ -241,14 +274,25 @@ strong {
     color: #d8dbe2;
 }
 
-ul {
-    margin: 18px 0 18px 22px;
-    color: #d0d0d0;
+
+/* PROJECT CALLOUT */
+
+.project-callout {
+    background: rgba(138, 180, 255, 0.08);
+    border: 1px solid rgba(138, 180, 255, 0.22);
+    border-left: 4px solid #8ab4ff;
+
+    padding: 26px;
+    border-radius: 15px;
+    margin-top: 28px;
 }
 
-li {
-    margin-bottom: 8px;
+.project-callout p:last-child {
+    margin-bottom: 0;
 }
+
+
+/* FOOTER */
 
 footer {
     background: #070a12;
@@ -256,6 +300,9 @@ footer {
     text-align: center;
     padding: 36px;
 }
+
+
+/* RESPONSIVE */
 
 @media (max-width: 850px) {
 
@@ -283,7 +330,7 @@ footer {
 
     .two-column,
     .two-column.reverse,
-    .drone-grid {
+    .quad-grid {
         grid-template-columns: 1fr;
     }
 
@@ -295,7 +342,11 @@ footer {
 </style>
 </head>
 
+
 <body>
+
+
+<!-- HERO -->
 
 <nav>
 
@@ -303,9 +354,9 @@ footer {
         Samuel Nicholson
     </div>
 
-    <div>
-        <a href="../index.html">Home</a>
-    </div>
+    <a href="../index.html">
+        Home
+    </a>
 
 </nav>
 
@@ -316,16 +367,14 @@ footer {
 
         <div class="hero-content">
 
-            <h1>FPV Drones & Flight Club</h1>
+            <h1>
+                FPV Drones & Flight Club
+            </h1>
 
             <p>
-                Building, maintaining and flying FPV aircraft while leading
-                the drone activities of the University of Canterbury Flight Club.
+                Building, maintaining and flying UAVs while leading the
+                drone activities of the University of Canterbury Flight Club.
             </p>
-
-            <a href="#flight-club" class="button">
-                View Experience
-            </a>
 
         </div>
 
@@ -334,20 +383,46 @@ footer {
 </header>
 
 
+<!-- STICKY NAVIGATION -->
+
 <div class="page-links">
 
     <div class="container">
 
-        <a href="#flight-club">Flight Club</a>
-        <a href="#fpv-builds">FPV Builds</a>
-        <a href="#aircraft">My Aircraft</a>
-        <a href="#maintenance">Maintenance</a>
-        <a href="#skills">Skills</a>
+        <a href="../index.html" class="home-link">
+            ← Home
+        </a>
+
+        <a href="#flight-club">
+            Flight Club
+        </a>
+
+        <a href="#uav-project">
+            Autonomous UAV Project
+        </a>
+
+        <a href="#fpv-builds">
+            FPV Builds
+        </a>
+
+        <a href="#quadcopters">
+            My Quadcopters
+        </a>
+
+        <a href="#maintenance">
+            Maintenance
+        </a>
+
+        <a href="#skills">
+            Skills
+        </a>
 
     </div>
 
 </div>
 
+
+<!-- FLIGHT CLUB -->
 
 <section id="flight-club">
 
@@ -357,31 +432,34 @@ footer {
 
     <div>
 
-        <h2>University of Canterbury Flight Club</h2>
+        <h2>
+            University of Canterbury Flight Club
+        </h2>
 
         <p class="lead">
-            I lead the drone side of the University of Canterbury Flight Club,
-            helping coordinate weekly flying and maintaining the club's aircraft.
+            I lead the drone side of the University of Canterbury Flight
+            Club, helping coordinate weekly flying and maintain the club's
+            UAVs.
         </p>
 
         <p>
             Every Friday, club members meet at Ilam Fields to fly fixed-wing
-            aircraft and FPV drones, practise new skills and introduce new
-            members to the hobby.
+            aircraft and quadcopters, practise new skills and introduce new
+            members to RC aviation.
         </p>
 
         <p>
-            My responsibilities include maintaining the club drones, organising
-            the drone activities during flight sessions, helping members with
-            aircraft setup and troubleshooting, and supporting people who are
-            learning to fly.
+            My responsibilities include maintaining the club drones,
+            coordinating drone operations during flying sessions, helping
+            members configure and troubleshoot their aircraft, and supporting
+            newer pilots as they learn.
         </p>
 
         <p>
-            The role has helped me develop leadership and communication skills
-            alongside my technical experience. It has also taught me how to
-            explain unfamiliar systems clearly and help other people diagnose
-            faults without simply taking over the task.
+            The role has developed my leadership, mentoring and communication
+            skills alongside my technical knowledge. It has also taught me
+            how to explain unfamiliar systems clearly and guide others
+            through a troubleshooting process.
         </p>
 
     </div>
@@ -390,10 +468,11 @@ footer {
 
         <img
             src="../images/flight-leadership.png"
-            alt="Samuel Nicholson helping at a University of Canterbury Flight Club session">
+            alt="Supporting members of the University of Canterbury Flight Club">
 
         <p class="caption">
-            Supporting members during a University of Canterbury Flight Club flying session.
+            Supporting members during a University of Canterbury Flight Club
+            flying session.
         </p>
 
     </div>
@@ -404,6 +483,8 @@ footer {
 
 </section>
 
+
+<!-- FLIGHT OPERATIONS -->
 
 <section class="alt">
 
@@ -415,34 +496,38 @@ footer {
 
         <img
             src="../images/flight-aircraft.png"
-            alt="Aircraft at a University of Canterbury Flight Club flying day">
+            alt="Aircraft at a University of Canterbury Flight Club session">
 
         <p class="caption">
-            Aircraft gathered during one of the club's regular Friday flight sessions at Ilam Fields.
+            Aircraft gathered during one of the club's regular Friday flying
+            sessions at Ilam Fields.
         </p>
 
     </div>
 
     <div>
 
-        <h2>Flight Operations</h2>
+        <h2>
+            Flight Operations
+        </h2>
 
         <p>
             Weekly flying sessions provide regular experience operating,
-            inspecting and supporting a variety of small unmanned aircraft.
+            inspecting and supporting a range of small unmanned aircraft.
         </p>
 
         <p>
-            Before flying, the aircraft are checked for mechanical damage,
-            loose components, battery condition and correct radio operation.
-            During sessions, I help coordinate where and when aircraft are flown
-            so that pilots can operate safely around each other.
+            Before flying, aircraft are checked for mechanical damage, loose
+            components, battery condition and correct radio operation. During
+            sessions, I help coordinate aircraft movements so pilots can
+            operate safely around one another.
         </p>
 
         <p>
-            This has reinforced the importance of pre-flight checks,
-            communication, situational awareness and making conservative
-            decisions when an aircraft is not operating correctly.
+            This experience has reinforced the importance of pre-flight
+            checks, clear communication, situational awareness and making
+            conservative decisions whenever an aircraft is not operating
+            correctly.
         </p>
 
     </div>
@@ -454,7 +539,9 @@ footer {
 </section>
 
 
-<section id="fpv-builds">
+<!-- AUTONOMOUS UAV PROJECT -->
+
+<section id="uav-project">
 
 <div class="container">
 
@@ -462,33 +549,160 @@ footer {
 
     <div>
 
-        <h2>FPV Drone Experience</h2>
+        <h2>
+            Flight Club Autonomous UAV Project
+        </h2>
+
+        <p class="lead">
+            I am also involved in a Flight Club project developing a larger
+            electric autonomous UAV as a practical platform for engineering,
+            experimentation and student learning.
+        </p>
+
+        <p>
+            The aircraft is being designed for applications such as search
+            and rescue, surveying, conservation, crop and livestock
+            management, atmospheric monitoring and emergency supply
+            delivery.
+        </p>
+
+        <p>
+            The current project targets include a maximum all-up mass below
+            14.5 kg, at least 60 minutes of flight time at maximum mass and a
+            minimum horizontal range of 25 km. Major subassemblies are intended
+            to be removable for maintenance, design iteration and transport
+            in a standard car.
+        </p>
+
+        <p>
+            The future intention is for the aircraft to operate autonomously
+            using ArduPilot, supported by onboard airspeed, altitude, position,
+            traffic and inertial sensing.
+        </p>
+
+    </div>
+
+    <div class="image-card">
+
+        <img
+            src="../images/flight-aircraft.png"
+            alt="University of Canterbury Flight Club aircraft">
+
+        <p class="caption">
+            The project provides a platform for members to contribute to
+            aircraft design, CAD, analysis, embedded systems and flight
+            testing.
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="spec-grid">
+
+    <div class="spec">
+        <strong>Maximum Mass</strong>
+        Less than 14.5 kg
+    </div>
+
+    <div class="spec">
+        <strong>Endurance Target</strong>
+        At least 60 minutes at maximum mass
+    </div>
+
+    <div class="spec">
+        <strong>Range Target</strong>
+        At least 25 km horizontal range
+    </div>
+
+    <div class="spec">
+        <strong>Payload Target</strong>
+        Approximately 3 kg
+    </div>
+
+    <div class="spec">
+        <strong>Propulsion</strong>
+        Fully electric
+    </div>
+
+    <div class="spec">
+        <strong>Autonomy</strong>
+        Planned ArduPilot integration
+    </div>
+
+</div>
+
+
+<div class="project-callout">
+
+    <h3>
+        Propulsion Test Rig
+    </h3>
+
+    <p>
+        Part of the current development work involves preparing a wind-tunnel
+        propulsion test rig. The proposed system uses an ESC and motor mounted
+        inside the tunnel, with power and signal cables routed externally.
+    </p>
+
+    <p>
+        The test setup is being developed to control discrete throttle levels
+        while logging voltage and current. This data can then be combined with
+        load-cell and airspeed measurements to evaluate thrust across a range
+        of throttle settings and wind-tunnel velocities.
+    </p>
+
+    <p>
+        An ESP32-based controller is being considered to provide PWM motor
+        control, electrical measurements, data logging and a simple laptop
+        interface without requiring an additional flight-controller software
+        layer.
+    </p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FPV BUILDS -->
+
+<section id="fpv-builds" class="alt">
+
+<div class="container">
+
+<div class="two-column">
+
+    <div>
+
+        <h2>
+            FPV Quad Building
+        </h2>
 
         <p>
             Alongside the Flight Club, I have developed practical experience
-            building, configuring and flying FPV drones.
+            building, configuring and flying FPV quadcopters.
         </p>
 
         <p>
-            My first FPV aircraft was an EMAX Tinyhawk III Plus Freestyle,
-            which provided a platform for learning Betaflight configuration,
-            radio setup, tuning, repairs and FPV flight.
+            My first dedicated FPV platform was an EMAX Tinyhawk III Plus
+            Freestyle, which allowed me to learn Betaflight configuration,
+            radio setup, tuning, maintenance and FPV flight.
         </p>
 
         <p>
-            I later built a 3.5-inch Volador freestyle drone from individually
-            selected components. The frame, motors, propellers, flight
-            electronics, radio system, video system and battery setup were
-            selected to achieve a balance of agility, durability, range and
-            flight time.
+            I later built a 3.5-inch Volador freestyle quad from individually
+            selected components. The frame, motors, propellers, electronics,
+            radio system, video system and battery setup were selected to
+            balance agility, durability, transmission range and flight time.
         </p>
 
         <p>
-            Building the Volador required considering the full aircraft as a
-            system rather than selecting each component independently.
-            Propeller size, motor KV, battery voltage, frame mass and ESC
-            capability all needed to be compatible with the intended flight
-            performance.
+            Component selection required considering the quad as a complete
+            system. Motor KV, propeller size, battery voltage, frame mass and
+            ESC capability all influenced the final flight behaviour.
         </p>
 
     </div>
@@ -497,7 +711,7 @@ footer {
 
         <img
             src="../images/flight-drones.png"
-            alt="Tinyhawk III Plus Freestyle and custom Volador 3.5 FPV drones">
+            alt="Tinyhawk and Volador FPV quadcopters">
 
         <p class="caption">
             My EMAX Tinyhawk III Plus Freestyle and custom-built Volador 3.5.
@@ -512,27 +726,34 @@ footer {
 </section>
 
 
-<section id="aircraft" class="alt">
+<!-- MY QUADCOPTERS -->
+
+<section id="quadcopters">
 
 <div class="container">
 
-<h2>My Aircraft</h2>
+<h2>
+    My Quadcopters
+</h2>
 
-<div class="drone-grid">
+<div class="quad-grid">
 
-    <div class="drone-card">
+
+    <div class="quad-card">
 
         <img
             src="../images/flight-tinyhawk.png"
-            alt="EMAX Tinyhawk III Plus Freestyle">
+            alt="EMAX Tinyhawk III Plus Freestyle quadcopter">
 
-        <div class="drone-content">
+        <div class="quad-content">
 
-            <h3>EMAX Tinyhawk III Plus Freestyle</h3>
+            <h3>
+                EMAX Tinyhawk III Plus Freestyle
+            </h3>
 
             <p>
-                My first dedicated FPV freestyle platform. It allowed me to
-                develop confidence with FPV flying while learning Betaflight,
+                My first dedicated FPV freestyle platform. It helped me
+                develop confidence with FPV flight while learning Betaflight,
                 receiver configuration, video setup and routine crash repairs.
             </p>
 
@@ -541,27 +762,30 @@ footer {
     </div>
 
 
-    <div class="drone-card">
+    <div class="quad-card">
 
         <img
             src="../images/flight-volador.png"
-            alt="Custom-built Volador 3.5 FPV drone">
+            alt="Custom-built Volador 3.5 FPV quadcopter">
 
-        <div class="drone-content">
+        <div class="quad-content">
 
-            <h3>Custom Volador 3.5</h3>
+            <h3>
+                Custom Volador 3.5
+            </h3>
 
             <p>
                 A fully custom 3.5-inch freestyle build assembled from
-                individually selected components. The build provides greater
-                performance, agility and transmission range while giving me
-                more control over the behaviour of the final aircraft.
+                individually selected components. It provides greater
+                performance, agility and transmission range while allowing
+                more control over the final aircraft behaviour.
             </p>
 
         </div>
 
     </div>
 
+
 </div>
 
 </div>
@@ -569,50 +793,76 @@ footer {
 </section>
 
 
-<section id="maintenance">
+<!-- MAINTENANCE -->
+
+<section id="maintenance" class="alt">
 
 <div class="container">
 
-<h2>Maintenance & Troubleshooting</h2>
+<h2>
+    Maintenance & Troubleshooting
+</h2>
 
 <p>
-Maintaining FPV aircraft has been just as valuable as building them.
-Frequent flying and occasional crashes create a wide range of mechanical,
-electrical and software faults that need to be diagnosed before the
-aircraft can safely return to service.
+Maintaining quadcopters has been just as valuable as building them.
+Frequent flying and occasional crashes create mechanical, electrical
+and software faults that must be diagnosed before an aircraft can
+safely return to service.
 </p>
 
 <p>
 This work includes both my own aircraft and drones used through the
 Flight Club. Rather than replacing components without investigation,
-I try to isolate the root cause of each fault through inspection,
-continuity testing, configuration checks and controlled bench testing.
-</p>
-
-<p>
-Examples of maintenance and troubleshooting work include:
+I try to isolate each problem through inspection, continuity testing,
+configuration checks and controlled bench testing.
 </p>
 
 <div class="skills-grid">
 
-    <div class="skill">Replacing failed ESCs</div>
-    <div class="skill">Replacing damaged motors</div>
-    <div class="skill">Soldering and repairing damaged boards</div>
-    <div class="skill">Repairing crash-damaged wiring and frames</div>
-    <div class="skill">Replacing damaged FPV antennas</div>
-    <div class="skill">Updating ExpressLRS firmware</div>
-    <div class="skill">Flashing Betaflight and INAV</div>
-    <div class="skill">Diagnosing receiver and channel issues</div>
-    <div class="skill">Reconfiguring and tuning aircraft after repairs</div>
+    <div class="skill">
+        Replacing failed ESCs
+    </div>
+
+    <div class="skill">
+        Replacing damaged motors
+    </div>
+
+    <div class="skill">
+        Soldering and repairing damaged boards
+    </div>
+
+    <div class="skill">
+        Repairing crash-damaged wiring and frames
+    </div>
+
+    <div class="skill">
+        Replacing damaged FPV antennas
+    </div>
+
+    <div class="skill">
+        Updating ExpressLRS firmware
+    </div>
+
+    <div class="skill">
+        Flashing Betaflight and INAV
+    </div>
+
+    <div class="skill">
+        Diagnosing receiver and channel issues
+    </div>
+
+    <div class="skill">
+        Reconfiguring and tuning aircraft after repairs
+    </div>
 
 </div>
 
 <p style="margin-top: 28px;">
-The most useful skill developed through this work has been systematic
+The most valuable skill developed through this work has been systematic
 fault diagnosis. UAV faults often appear as symptoms such as unstable
 flight, video interference, receiver dropouts or inconsistent motor
 behaviour, so each subsystem must be checked methodically until the
-problem can be isolated.
+underlying problem is isolated.
 </p>
 
 </div>
@@ -620,38 +870,78 @@ problem can be isolated.
 </section>
 
 
-<section id="skills" class="alt">
+<!-- SKILLS -->
+
+<section id="skills">
 
 <div class="container">
 
-<h2>Experience Developed</h2>
+<h2>
+    Experience Developed
+</h2>
 
 <p>
-Through building and flying FPV drones and leading the drone activities
-within the Flight Club, I have developed practical experience across:
+Through building and flying FPV quadcopters, supporting the Flight Club
+and contributing to its autonomous UAV project, I have gained practical
+experience across:
 </p>
 
 <div class="skills-grid">
 
-    <div class="skill">UAV maintenance and repair</div>
-    <div class="skill">FPV system integration</div>
-    <div class="skill">PCB soldering</div>
-    <div class="skill">RF and antenna selection</div>
-    <div class="skill">Betaflight configuration</div>
-    <div class="skill">ExpressLRS setup</div>
-    <div class="skill">PID and rate tuning</div>
-    <div class="skill">Radio and receiver configuration</div>
-    <div class="skill">Fault diagnosis</div>
-    <div class="skill">Flight safety and operations</div>
-    <div class="skill">Leadership and mentoring</div>
+    <div class="skill">
+        UAV maintenance and repair
+    </div>
+
+    <div class="skill">
+        FPV system integration
+    </div>
+
+    <div class="skill">
+        PCB soldering
+    </div>
+
+    <div class="skill">
+        RF and antenna selection
+    </div>
+
+    <div class="skill">
+        Betaflight configuration
+    </div>
+
+    <div class="skill">
+        ExpressLRS setup
+    </div>
+
+    <div class="skill">
+        PID and rate tuning
+    </div>
+
+    <div class="skill">
+        Radio and receiver configuration
+    </div>
+
+    <div class="skill">
+        Fault diagnosis
+    </div>
+
+    <div class="skill">
+        Flight safety and operations
+    </div>
+
+    <div class="skill">
+        Leadership and mentoring
+    </div>
+
+    <div class="skill">
+        Collaborative UAV development
+    </div>
 
 </div>
 
 <p style="margin-top: 28px;">
-This experience complements my larger UAV projects by giving me regular
-hands-on exposure to real aircraft operation, repair and troubleshooting.
-It has reinforced my interest in UAV systems and helped me become more
-confident working across mechanical, electronic and software problems.
+This experience complements my larger personal UAV projects by providing
+regular exposure to aircraft operation, maintenance, collaborative design
+and troubleshooting across mechanical, electronic and software systems.
 </p>
 
 </div>
@@ -660,10 +950,10 @@ confident working across mechanical, electronic and software problems.
 
 
 <footer>
-Samuel Nicholson • FPV Drones & UC Flight Club
+    Samuel Nicholson • FPV Drones & University of Canterbury Flight Club
 </footer>
+
 
 </body>
 
 </html>
-```
