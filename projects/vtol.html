@@ -946,30 +946,30 @@ change could significantly improve low-speed handling.
 
 </section>
 
-<!-- FLIGHT DATA ANALYSIS -->
+<!-- FLIGHT ANALYSIS -->
 
 <section id="analysis" class="alt">
 
 <div class="container">
 
 <h2>
-Flight Data Analysis
+Flight Analysis
 </h2>
 
 <p>
 Throughout development, every test flight was recorded using the
-aircraft's onboard blackbox logger. Rather than relying solely on
-subjective observations during flight, these logs provided detailed
-telemetry that could be analysed afterwards to better understand the
-aircraft's behaviour and guide future design decisions.
+aircraft's onboard blackbox logger. To analyse this data, I developed a
+suite of custom <strong>Python</strong> tools that automatically parse
+the flight logs and generate interactive visualisations of the
+aircraft's performance.
 </p>
 
 <p>
-To automate this process, I developed a suite of Python tools that
-parse the recorded flight data and generate interactive visualisations
-of the aircraft's performance. This made it possible to quickly inspect
-control response, vibration characteristics and actuator behaviour
-without manually searching through raw log files.
+Developing these tools significantly reduced the time required to
+analyse each flight while providing far greater insight than manually
+reviewing raw telemetry. The software became an important part of the
+development process, allowing design changes and controller tuning to be
+evaluated using measured flight data rather than subjective observation.
 </p>
 
 <div class="two-column">
@@ -981,17 +981,17 @@ Interactive Flight Timeline
 </h3>
 
 <p>
-The analysis software synchronises multiple telemetry streams into a
-single interactive interface, allowing individual events to be examined
-in detail. Control setpoints, measured gyro response, PID controller
-terms and motor outputs can all be viewed simultaneously while zooming
-through the flight timeline.
+The Python application synchronises multiple telemetry streams into a
+single interactive interface, allowing control setpoints, measured gyro
+response, PID controller terms and motor outputs to be viewed
+simultaneously. Linked plots make it easy to zoom into individual events
+and investigate the aircraft's behaviour throughout the flight.
 </p>
 
 <p>
-Linking these datasets together makes it much easier to identify the
-cause of unusual aircraft behaviour and evaluate the effectiveness of
-controller tuning following each test flight.
+This tool was written specifically for this project to streamline flight
+testing and provide a clearer understanding of how controller tuning and
+airframe changes affected the aircraft's performance.
 </p>
 
 </div>
@@ -999,13 +999,13 @@ controller tuning following each test flight.
 <div>
 
 <img
-    src="../images/vtol-analysis1.png"
+    src="../images/vtol-analysis2.png"
     class="image"
     alt="Interactive Python flight analysis interface">
 
 <p class="caption">
-Python-based flight analysis tool combining blackbox telemetry into an
-interactive timeline for controller tuning and flight evaluation.
+Custom Python application developed to visualise and analyse blackbox
+flight logs through an interactive, synchronised timeline.
 </p>
 
 </div>
@@ -1022,16 +1022,17 @@ Frequency Analysis
 <div>
 
 <p>
-The software also performs frequency-domain analysis of the onboard
-gyro data by calculating the power spectral density of each axis. This
-allows vibration frequencies to be identified and linked to specific
-components such as motors, propellers or structural resonances.
+The software also performs frequency-domain analysis by calculating the
+power spectral density of the onboard gyro measurements. Automatically
+identifying dominant vibration frequencies makes it possible to detect
+motor, propeller and structural resonances, helping guide mechanical
+improvements and filter tuning.
 </p>
 
 <p>
-Automatically detecting significant vibration peaks makes it easier to
-optimise filtering, improve mechanical design and verify that design
-changes reduce unwanted vibration between successive flight tests.
+Implementing this functionality in Python allowed large flight logs to
+be processed automatically, producing consistent analysis across every
+test flight.
 </p>
 
 </div>
@@ -1039,13 +1040,13 @@ changes reduce unwanted vibration between successive flight tests.
 <div>
 
 <img
-    src="../images/vtol-analysis2.png"
+    src="../images/vtol-analysis1.png"
     class="image"
     alt="Gyroscope power spectral density plot">
 
 <p class="caption">
-Power spectral density of the onboard gyro data highlighting dominant
-vibration frequencies recorded during flight.
+Python-generated power spectral density analysis highlighting dominant
+vibration frequencies measured during flight.
 </p>
 
 </div>
