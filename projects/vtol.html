@@ -713,7 +713,7 @@ independently for transport, maintenance and rapid design iteration.
 <div class="container">
 
 <h2>
-    Structural Design & Additive Manufacturing
+Structural Design & Additive Manufacturing
 </h2>
 
 <p>
@@ -724,75 +724,48 @@ performance.
 </p>
 
 <p>
-Although additive manufacturing provides enormous design freedom,
-FDM printing is often overlooked for aircraft because standard
-thermoplastics generally provide a lower stiffness-to-weight ratio
-than conventional composite construction.
+Although FDM printing provides enormous design freedom, standard
+thermoplastics generally offer a lower stiffness-to-weight ratio than
+traditional composite construction. Without access to composite
+manufacturing, the objective became achieving the highest possible
+structural efficiency using conventional PLA through careful engineering
+design.
 </p>
 
 <p>
-Many printed aircraft compensate for this through lightweight foaming
-filaments or composite construction using carbon fibre or fibreglass.
-At the time of this project, however, I did not have access to these
-materials or the resources required for composite manufacturing.
-Instead, I aimed to achieve the highest possible structural efficiency
-using conventional PLA and careful engineering design.
+Every component was designed with print orientation, expected loading,
+manufacturability and weight in mind. Rather than relying on generic
+slicer infill, major structural components incorporated custom-designed
+internal reinforcement to place material only where it was required.
 </p>
-
-<p>
-Unlike conventional engineering materials,
-<strong>FDM-printed parts are inherently anisotropic</strong>, meaning
-their strength depends heavily on print orientation. This made print
-orientation a design parameter that had to be considered alongside the
-geometry of every component.
-</p>
-
-<p>
-Layer direction, expected loading, printability, support requirements
-and manufacturing constraints all influenced how each part was designed
-and positioned on the print bed.
-</p>
-
-<p>
-Rather than relying on automatically generated slicer infill, major
-structural components were designed with
-<strong>custom internal reinforcement</strong>. This provided control
-over exactly where material was placed, allowing high-load regions to
-be reinforced while unnecessary material was removed elsewhere.
-</p>
-
-<div class="callout">
-
-    <strong>
-        Structural design objective
-    </strong>
-
-    <p>
-        The aim was to make the printed parts behave as engineered
-        structural components rather than simply plastic shells filled
-        with generic infill.
-    </p>
-
-</div>
 
 
 <h3>
-    Fuselage Structure
+Fuselage Structure
 </h3>
 
+<div class="two-column">
+
+<div>
+
 <p>
-The fuselage was designed around a continuous
-<strong>helical rib structure</strong> running longitudinally through
-the aircraft.
+The fuselage is built around a continuous <strong>helical rib
+structure</strong> running along the length of the aircraft. Instead of
+using conventional slicer infill, the internal reinforcement was
+designed specifically for the expected loading conditions, increasing
+both bending stiffness and torsional rigidity while minimising mass.
 </p>
 
 <p>
-Rather than filling the fuselage with conventional slicer infill, these
-ribs were designed specifically around the expected loading conditions.
-The helical arrangement increases both bending stiffness and torsional
-rigidity while using substantially less material than a solid or
-high-infill structure.
+As the fuselage exceeded the printer's build volume, it was divided
+into two main sections. To maintain structural integrity across the
+joint, <strong>1.2&nbsp;mm steel locating pins</strong> were incorporated
+to improve alignment and transfer bending loads between the two halves.
 </p>
+
+</div>
+
+<div>
 
 <img
     src="../images/vtol-body-structure.jpg"
@@ -800,86 +773,77 @@ high-infill structure.
     alt="Custom internal helical fuselage structure">
 
 <p class="caption">
-Custom-designed helical fuselage reinforcement used to increase bending
-stiffness and torsional rigidity while minimising mass.
+Custom-designed helical reinforcement increases bending stiffness and
+torsional rigidity while keeping the fuselage lightweight.
 </p>
 
-<p>
-Because the fuselage was too long to manufacture as one printed part,
-it was divided into two main sections. This joint had the potential to
-become one of the weakest regions of the body.
-</p>
+</div>
 
-<p>
-To reinforce the connection,
-<strong>1.2 mm diameter steel locating pins</strong> were incorporated
-across the joint. These pins help maintain alignment and transfer
-bending loads between the fuselage sections, preventing the modular
-interface from becoming the weakest part of the structure.
-</p>
+</div>
 
 
 <h3>
-    Wing Spar
+Wing Structure
 </h3>
 
+<div class="two-column">
+
+<div>
+
 <p>
-The wings are reinforced using
-<strong>one 10 × 8 × 500 mm carbon-fibre spar per wing</strong>.
+Each wing is reinforced using a single
+<strong>10 × 8 × 500 mm carbon-fibre spar</strong>, which carries the
+majority of the bending loads while allowing the printed structure to
+remain lightweight.
 </p>
 
 <p>
-The spars carry the majority of the wing bending loads while allowing
-the printed wing shells and internal ribs to remain lightweight. Carbon
-fibre was selected because it provides high bending stiffness for
-relatively low mass.
+The wing was designed as multiple printed sections to fit within the
+printer's build volume. Following research into lightweight wing
+structures and truss layouts, the internal geometry was developed using
+a series of <strong>diagonal reinforcing ribs</strong> that support the
+aerodynamic shell and efficiently transfer loads into the spar.
 </p>
 
 <p>
-Due to the available printer size, each wing had to be manufactured as
-multiple printed sections, including the aileron assembly.
+Additional <strong>1.2&nbsp;mm steel locating pins</strong> align each
+printed section during assembly, improving joint accuracy and preventing
+rotation between adjoining sections.
 </p>
 
-<p>
-Following research into lightweight wing structures and truss layouts,
-the internal printed geometry was designed using a series of
-<strong>diagonal reinforcing ribs</strong>. These ribs support the
-aerodynamic shell and transfer local loads into the carbon-fibre spar.
-</p>
+</div>
 
-<p>
-The printed wing sections are aligned using additional
-<strong>1.2 mm diameter steel locating pins</strong>. These improve
-joint alignment and prevent the separate wing sections from rotating
-relative to one another.
-</p>
+<div>
 
 <img
     src="../images/vtol-wing-structure.jpg"
     class="image"
-    alt="Internal wing structure and carbon-fibre wing spar">
+    alt="Internal wing structure and carbon-fibre spar">
 
 <p class="caption">
-Internal wing reinforcement and carbon-fibre spar arrangement used to
-provide bending stiffness while keeping the printed structure lightweight.
+Internal wing reinforcement transfers aerodynamic loads into the
+carbon-fibre spar while maintaining a lightweight structure.
 </p>
+
+</div>
+
+</div>
 
 
 <h3>
-    Design Iteration
+Design Iteration
 </h3>
 
 <p>
-Achieving the final structure required a large number of iterations.
-Wall thickness, rib geometry, print orientation, assembly methods and
-reinforcement strategies were repeatedly adjusted throughout the
-project.
+Achieving the final structure required numerous design iterations. Wall
+thicknesses, rib geometry, print orientation, assembly methods and
+reinforcement strategies were continually refined as manufacturing
+experience and flight testing revealed opportunities for improvement.
 </p>
 
 <p>
-Each redesign improved a particular aspect of the aircraft, whether
-that was weight, stiffness, print quality, assembly, reliability or
-repairability.
+Each revision addressed a specific challenge, whether reducing weight,
+improving stiffness, simplifying assembly or increasing reliability.
 </p>
 
 <img
@@ -888,15 +852,14 @@ repairability.
     alt="Pile of prototype and discarded VTOL printed components">
 
 <p class="caption">
-A collection of unused prototype parts created throughout development.
-Each component represents a design test, manufacturing experiment or
-lesson that influenced the final aircraft.
+A collection of prototype components produced throughout development.
+Each represents a design iteration, manufacturing experiment or lesson
+that contributed to the final aircraft.
 </p>
 
 </div>
 
 </section>
-
 
 <!-- AERODYNAMICS -->
 
