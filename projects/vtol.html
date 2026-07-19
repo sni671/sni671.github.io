@@ -946,6 +946,116 @@ change could significantly improve low-speed handling.
 
 </section>
 
+<!-- FLIGHT DATA ANALYSIS -->
+
+<section id="analysis" class="alt">
+
+<div class="container">
+
+<h2>
+Flight Data Analysis
+</h2>
+
+<p>
+Throughout development, every test flight was recorded using the
+aircraft's onboard blackbox logger. Rather than relying solely on
+subjective observations during flight, these logs provided detailed
+telemetry that could be analysed afterwards to better understand the
+aircraft's behaviour and guide future design decisions.
+</p>
+
+<p>
+To automate this process, I developed a suite of Python tools that
+parse the recorded flight data and generate interactive visualisations
+of the aircraft's performance. This made it possible to quickly inspect
+control response, vibration characteristics and actuator behaviour
+without manually searching through raw log files.
+</p>
+
+<div class="two-column">
+
+<div>
+
+<h3>
+Interactive Flight Timeline
+</h3>
+
+<p>
+The analysis software synchronises multiple telemetry streams into a
+single interactive interface, allowing individual events to be examined
+in detail. Control setpoints, measured gyro response, PID controller
+terms and motor outputs can all be viewed simultaneously while zooming
+through the flight timeline.
+</p>
+
+<p>
+Linking these datasets together makes it much easier to identify the
+cause of unusual aircraft behaviour and evaluate the effectiveness of
+controller tuning following each test flight.
+</p>
+
+</div>
+
+<div>
+
+<img
+    src="../images/vtol-analysis2.png"
+    class="image"
+    alt="Interactive Python flight analysis interface">
+
+<p class="caption">
+Python-based flight analysis tool combining blackbox telemetry into an
+interactive timeline for controller tuning and flight evaluation.
+</p>
+
+</div>
+
+</div>
+
+
+<h3>
+Frequency Analysis
+</h3>
+
+<div class="two-column">
+
+<div>
+
+<p>
+The software also performs frequency-domain analysis of the onboard
+gyro data by calculating the power spectral density of each axis. This
+allows vibration frequencies to be identified and linked to specific
+components such as motors, propellers or structural resonances.
+</p>
+
+<p>
+Automatically detecting significant vibration peaks makes it easier to
+optimise filtering, improve mechanical design and verify that design
+changes reduce unwanted vibration between successive flight tests.
+</p>
+
+</div>
+
+<div>
+
+<img
+    src="../images/vtol-analysis1.png"
+    class="image"
+    alt="Gyroscope power spectral density plot">
+
+<p class="caption">
+Power spectral density of the onboard gyro data highlighting dominant
+vibration frequencies recorded during flight.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
 <!-- AUTONOMOUS FLIGHT -->
 
 <section id="autonomy">
